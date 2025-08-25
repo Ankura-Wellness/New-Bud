@@ -1,0 +1,40 @@
+#zsiCheckout{
+    #loginDisplayArea{
+        border: 0.8px solid rgba(0,0,0,.125);
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h2{
+            @extend .primaryFont;
+
+        }
+    }
+
+    #checkoutSteps{
+        .accordion-item{
+            margin-bottom: 20px;
+            border: 1px solid rgba(0,0,0,.125) !important;
+            
+            .accordion-button{
+                pointer-events: none;
+            }
+        }
+    
+        label,input,.validationMessage{
+            @extend .secondaryFont;
+            font-weight: 300;
+        }
+    
+        .validationMessage{
+            color: red;
+            display: none;
+        }
+    
+        input.is-invalid + .validationMessage{
+            display: block;
+        }
+    }
+}

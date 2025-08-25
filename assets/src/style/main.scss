@@ -1,0 +1,28 @@
+@import 'variables';
+@import 'header';
+@import 'footer';
+
+@import 'front-page';
+@import 'page-blog';
+@import 'page-our-story';
+@import 'page-privacy-policy';
+@import 'page-terms-and-conditions';
+@import 'checkout';
+@import 'cart';
+@import 'single';
+@import 'store-locator';
+@import 'review-carousel';
+@import 'thankyou';
+
+:root {
+    color-scheme: only light;
+}
+
+.hideScroll{
+    overflow: hidden;
+}
+
+label.mandatory::after{
+    content: "*";
+    color: red;
+}

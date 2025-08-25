@@ -1,0 +1,26 @@
+#zsiOurStoryPage{
+
+    p.photoCaption{
+        padding: 20px;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 12px;
+        border-bottom: 1px solid $primaryColor;
+        text-align: center;
+    }
+    
+    p.synopsis{
+        @extend .secondaryFont;
+        font-weight: 300;
+        font-size: 17px;
+        margin-bottom: 30px;
+
+        &#firstChapter::first-letter {
+            @extend .primaryFont;
+            float: left;
+            font-size: 6rem;
+            line-height: 0.65;
+            margin: 0.1em 0.1em 0.2em 0;
+        }
+    }
+}

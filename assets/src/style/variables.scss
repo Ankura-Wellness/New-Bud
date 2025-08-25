@@ -1,0 +1,399 @@
+$primaryColor: #fecc00;
+$secondaryColor: #e31e24;
+$textBlack: #26231d;
+$textGrey: #847d73;
+$textGolden: #c39d63;
+
+body{
+    --bs-danger: $secondaryColor;
+    --bs-warning: $primaryColor;
+}
+
+$mobile: 576px;
+$tablet: 768px;
+$desktop: 992px;
+$wide: 1200px;
+
+button:disabled{
+    cursor: not-allowed;
+}
+
+// @use 'mq' as * with (
+//   $breakpoints: (
+//     mobile: 576px,
+//     tablet: 768px,
+//     desktop: 992px,
+//     wide: 1200px,
+//   )
+// );
+
+.hideScroller{
+    overflow-y: hidden;
+}
+
+@font-face{
+    font-family: 'KozGoPro-Bold';
+    src: url('../fonts/KozGoPro-Bold.otf');
+}
+
+.primaryFont{
+    font-family: 'KozGoPro-Bold' !important;
+}
+
+.secondaryFont{
+    font-family: 'Lato' !important;
+}
+
+.numberFont{
+    font-family: "Roboto Slab", serif !important;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.zsiHeader{
+    margin-top: 40px !important;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+ 
+    div{
+        margin-top: 10px;
+        margin: 0 12px;
+        height: 5px;
+        width: 100px;
+        background-color: $primaryColor;
+    }
+
+    p{
+        @extend .secondaryFont;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 20px 0 20px 0;
+    }
+}
+
+.zsiCatalogue{
+    .product{
+        padding: 10px;
+
+        a{    
+            text-decoration: none;
+
+            h4{
+                color: $textBlack;
+                height: 58px;
+                line-height: 29px;
+                
+            }
+
+            @media screen and (max-width: 992px){
+                h4{
+                    height: 87px;
+                    line-height: 29px;
+                }
+            }
+
+            img{
+                transition: transform 1.5s;
+            }
+
+            .jdgm-prev-badge__text{
+                @extend .primaryFont;
+                font-weight: 800;
+                color: rgba(0,0,0,.5) !important;
+                text-transform: capitalize;
+            }
+
+            hr{
+                transition: clip-path 0.3s;
+                clip-path: inset(0px 100% 0 0);
+                margin: 3px 0px;
+            }
+
+            &:hover{
+                img{
+                    transform: scale(1.3);
+                }
+
+                hr{
+                    clip-path: inset(0px 0% 0 0);;
+                }
+            }
+        }
+
+        .btn-warning{
+            padding-top: 8px;
+        }
+
+        &.zsiDisabledProduct{
+            pointer-events: none;
+            opacity: 0.7;
+            filter: grayscale(0.5);
+        }
+    }
+
+    
+}
+
+.btn{
+    @extend .primaryFont;
+
+    // &::after{
+    //     content: '>';
+    //     opacity:0;
+    //     position: absolute;
+    // }
+
+    // &:hover{
+    //     padding-right: 20px;
+
+    //     &::after{
+    //         content: ' >';
+    //         opacity: 1;
+            
+    //     }
+    // }
+}
+
+.zsiPrice{
+    color: $secondaryColor;
+
+    small,span:nth-of-type(1){
+        @extend .numberFont;
+
+        &::before{
+            content: '₹';
+            font-size: smaller;
+        }
+    }
+
+    .badge{
+        @extend .primaryFont;
+        color: $textBlack;
+    }
+
+    small{
+        color: $textGrey;
+        font-weight: 300;
+    }
+}
+
+.zsiFeatures{
+    div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+
+        img{
+            filter: invert(90);
+            width: 50px;
+        }
+
+        h5{
+            @extend .secondaryFont;
+            margin-top: 20px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+    }   
+}
+
+.zsiBreadcrumb{
+    @extend .secondaryFont;
+    font-weight: 300;
+    padding: 20px 0;
+
+    a{
+        text-decoration: none;
+        color: $textGrey;
+
+        &:hover , &:active{
+            color: $secondaryColor;
+        }
+    }
+}
+
+.zsiShortDescription{
+    ul{
+        li{
+            @extend .secondaryFont;
+            font-family: 14px;
+            font-weight: 300;
+            padding: 5px;
+        }
+    }
+
+    strong{
+        @extend .secondaryFont;
+        display: block;
+        width: 100%;
+        font-family: 14px;
+        text-align: center;
+    }
+}
+
+.zsiSharing{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+
+    a{
+        @extend .secondaryFont;
+        color: $textBlack;
+        text-transform: uppercase;
+        margin: 10px;
+        font-size: 14px;
+        font-weight: 300;
+        text-decoration: none;
+
+        i{
+            margin-right: 10px;
+        }
+    }
+}
+
+.zsiAboutUs{
+    
+    h3{
+        color: $textBlack;
+    }
+
+    p{
+        line-height: 30px;
+        letter-spacing: 0.5px;
+    }
+}
+
+.zsiPageTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: inherit 0 inherit 0;
+    color: #fff;
+    height: 250px;
+    background-image: url('https://zantye.com/wp-content/uploads/2021/07/4-3.png');
+    background-blend-mode: overlay;
+    background-color: rgba(103, 76, 20, 0.96);
+    background-size: cover;
+
+    h1{
+        font-family: 'KozGoPro-Bold';
+        font-size: 72px !important;
+        font-weight: 800;
+    }
+}
+
+////////////////////////////////////////////////////////////
+
+.zsiBlog.card{
+    // margin-bottom: 10px;
+    // width: 30%;
+    overflow: hidden;
+    
+    .thumbnailArea{
+        height: 250px !important;
+        background-size: cover;
+        // overflow: hidden;
+
+        // img{
+        //     height: 100%;
+        // }
+    }
+
+    a{
+        text-decoration: none;
+        cursor: pointer !important;
+
+        h3,h5,p{
+            text-decoration: none !important;
+        }
+        
+        h3{
+            @extend .primaryFont;
+            font-weight: 700;
+            margin-top: 10px;
+            height: 68px;
+            line-height: 34px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            color: #000 !important;
+            text-transform: uppercase;
+        }
+    
+        h5{
+            @extend .secondaryFont;
+            font-size: 16px;
+            color: $textGolden;
+            height: 58px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    
+        h6{
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 300;
+            color: $textGrey;
+            margin-bottom: 20px;
+        }
+    
+        p{
+            @extend .secondaryFont;
+            font-size: 12px;
+            color: $textGrey;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+    
+        .footer {
+            display: flex;
+            justify-content: end;
+        
+            .read_more{
+                @extend .secondaryFont;
+                text-decoration: none;
+                font-size: 12px;
+                text-transform: uppercase;
+                color: $textGrey;
+            }
+        }
+    }
+}
+
+.preHidden{
+    display: none;
+
+    &.ready{
+        display: flex;
+    }
+}
+
+.preUpdate{
+    opacity: 0.6;
+    cursor: not-allowed;
+
+    button,a{
+        pointer-events: none;
+    }
+
+    &.ready{
+        opacity: 1;
+        cursor: pointer;
+
+        button,a{
+            pointer-events: all;
+        }
+    }
+}

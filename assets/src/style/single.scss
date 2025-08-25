@@ -1,0 +1,30 @@
+#zsiBlogPage{
+
+    h1{
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+    }
+
+    h6{
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 300;
+        color: $textGrey;
+        margin-bottom: 20px;
+    }
+
+    img{
+        width: 100% !important;
+    }
+
+    p,li span{
+        @extend .secondaryFont;
+        font-weight: 300;
+    }
+
+    h2{
+        font-weight: 700;
+        margin: 30px 0 20px 0;
+    }
+}

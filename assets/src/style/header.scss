@@ -1,0 +1,40 @@
+
+$primaryColor: #fecc00;
+$secondaryColor: #e31e24;
+
+@font-face{
+    font-family: 'KozGoPro-Bold';
+    src: url('https://localhost/zantyes/wp-content/uploads/2022/09/KozGoPro-Bold.otf');
+}
+
+.navbar{
+    a{
+        color: #000;
+
+        &:hover,&:active,&:focus {
+            color: $secondaryColor !important;
+        }
+    }
+
+    background-color: $primaryColor !important;
+
+    .nav-item a{
+        font-family: 'KozGoPro-Bold' !important;
+    }
+
+    .navbar-brand img{
+        height: 55px;
+    }
+
+    #zsiMobileCartButton{
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        background-color: #fff;
+        z-index: 9;
+
+        &:hover i{
+            opacity: 0.8;
+        }
+    }
+}

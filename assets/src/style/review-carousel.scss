@@ -1,0 +1,13 @@
+#zsiStoreReviewCarousel{
+    p,h2,h3,h4,h5,h6,span,.jdgm-carousel-item__reviewer-name,.jdgm-all-reviews-rating-wrapper{
+        @extend .primaryFont;
+    }
+
+    .jdgm-star{
+        font-family: 'JudgemeStar' !important;
+    }
+
+    .jdgm-all-reviews-rating-wrapper{
+        color: #e31e24;
+    }
+}

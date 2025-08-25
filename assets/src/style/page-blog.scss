@@ -1,0 +1,29 @@
+#zsiBlogsPage{
+    background-color: rgb(236, 236, 236);
+
+    .zsiBlogPageArea{
+        display: grid;
+        grid-gap: 20px; 
+        // TO:DO Make mosaic
+        grid-template-columns: repeat(3,auto);
+    }
+
+    @media screen and (max-width: 992px){
+        .zsiBlogPageArea{
+            grid-template-columns: repeat(2,auto);
+        }
+    }
+
+    @media screen and (max-width: 576px){
+        .zsiBlogPageArea{
+            grid-template-columns: repeat(1,auto);
+        }
+    }
+
+    .zsiBlogPageArea::before,.zsiBlogPageArea::after {
+        content: "";
+        flex-basis: 100%;
+        width: 0;
+        order: 2;
+    }
+}

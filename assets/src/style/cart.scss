@@ -1,0 +1,158 @@
+#zsiCartArea{
+    #zsiBackground{
+        display: none;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000aa;
+        top:0;        
+    }
+
+    lottie-player{
+        height: 200px;
+        width: 200px
+    }
+
+
+    #zsiCart{
+        position:fixed;
+        top:0px;
+        width:400px;
+        height: 100vh;
+        background-color: white;
+        right: 0px;
+        box-shadow: rgba(99,99,99,.2) 0 2px 8px 0;
+        transform: translateX(100%);
+        transition: transform 0.5s;
+    
+        #nonEmptyCart{
+            display: flex;
+
+            h3{
+                // box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                // -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                // -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+                .warningMessage{
+                    @extend .secondaryFont;
+                    font-size: 14px;
+                    font-weight: 700;
+                }
+            }
+        }
+    
+        #emptyCart{
+            display: none;
+        }
+    
+        &.empty{
+            #nonEmptyCart{
+                display: none;
+            }
+    
+            #emptyCart{
+                display: flex;
+            }
+
+            &.updating{
+                display: none;
+            }
+        }
+
+        &.updating {
+            #emptyCart{
+                display: none !important;
+            }
+        }
+        
+        #zsiCartItemArea{
+            overflow-y: auto;
+            flex-grow: 1;
+    
+            .cartItem{
+                display: grid;
+                grid-template-columns: 30% 55% 15%;
+    
+                img{
+                    aspect-ratio: 1/1;
+                }
+        
+                div{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+        
+                    h5{
+                        @extend .primaryFont;
+                    }
+    
+                    @media screen and (max-width: 420px){
+                        
+                    }
+        
+                    h6{
+                        @extend .secondaryFont;
+                        font-weight: 300;
+                    }
+                }
+    
+                button{
+                    line-height: 10px;
+                    border-width: 3px;
+                    height: 35px;
+                    width: 35px;
+                    padding: 0;
+    
+                    &:nth-of-type(1){
+                        border-radius: 4px 4px 0 0;
+                        border-bottom-width: 1.5px;
+                    }
+    
+                    &:nth-of-type(2){
+                        border-radius: 0 0 4px 4px;
+                        border-top-width: 1.5px;
+                    }
+                }
+            }
+        }
+    }
+
+    #loader{
+        display: none;
+        position: fixed;
+        height: 100vh;
+        width: 100vw;
+        background-color: #000000aa;
+        top: 0;
+        z-index: 9999999;
+
+        lottie-player{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        &.show{
+            display: block;
+        }
+    }
+    
+    @media screen and (max-width: 420px){
+        #zsiCart{
+            width: 100% !important;
+        }
+    }
+}
+
+#zsiCartArea{
+    &.show{
+        #zsiBackground{
+            display: block;
+        }
+
+        #zsiCart{
+            transform: translateX(0) !important;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+#zsiFaqsTermsAndConditions{
+    h2{
+        @extend .primaryFont;
+    }
+
+    p,.accordion-body{
+        @extend .secondaryFont;
+        font-weight: 300;
+    }
+    
+    .accordion{
+        .accordion-header button.accordion-button{
+            font-size: 20px;
+            color: #000 !important;
+            text-transform: uppercase;
+            background-color: $primaryColor !important;
+        }
+    }
+}
