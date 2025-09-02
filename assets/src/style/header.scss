@@ -1,13 +1,65 @@
+nav#nbHeader{
+    background-color: white !important;
+    border: 1px solid $lightGray;
+    height: 200px;
+    position: relative;
 
-$primaryColor: #fecc00;
-$secondaryColor: #e31e24;
+    #nbLogo{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        grid-template-rows: repeat( 3,1fr);
+        height: 60% !important;
+        position: relative;
+        text-decoration: none;
+        padding: 0px 10px;
 
-@font-face{
-    font-family: 'KozGoPro-Bold';
-    src: url('https://localhost/zantyes/wp-content/uploads/2022/09/KozGoPro-Bold.otf');
-}
+        &:hover{
+            background-color: lightgray;
+            border-radius: 10px;
+        }
 
-.navbar{
+        h1,p{
+            text-decoration: none !important;
+            color: $primaryColor;
+        }
+
+        #logo{
+            grid-row: span 3 / span 3;
+            justify-self: end;
+
+            align-self: center;
+        }
+
+        #name{
+            grid-column: span 2 / span 2;
+            grid-row: span 2 / span 2;
+            font-size: 55px;
+            padding-left: 20px;
+            display: flex;
+            align-items: end;
+
+            h1{
+                font-size: 65px;
+                margin-bottom: 0;
+            }
+        }
+
+        #tagline{
+            @extend .taglineFont;
+            grid-column: span 2 / span 2;
+            grid-column-start: 2;
+            grid-row-start: 3;
+            padding-left: 20px;
+            display: flex;
+            align-items: start;
+         
+            p{
+                @extend .taglineFont;
+                font-size: 22px;
+            }
+        }
+    }
+    
     a{
         color: #000;
 
@@ -16,25 +68,136 @@ $secondaryColor: #e31e24;
         }
     }
 
-    background-color: $primaryColor !important;
+    #nbLgMenu{
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        height: 80px;
+        min-width: 300px;
+        background-color: black;
+        z-index: 9999;
+        border-radius: 40px;
+        transform: translate(-50%,-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
 
-    .nav-item a{
-        font-family: 'KozGoPro-Bold' !important;
+        a{
+            padding: 0 10px;
+            color: #fff;
+            font-weight: 800;
+            text-decoration: none;
+
+            &#nbShop{
+                color: #000;
+                text-decoration: none;
+                padding: 10px 20px;
+                background-color: #fff;
+                margin: 0 10px;
+                border-radius: 40px;
+                font-weight: 800;
+            }
+        }
+
     }
 
-    .navbar-brand img{
-        height: 55px;
-    }
+    a#nbEnquiry{
+        display: flex;
+        align-items: center;
+        overflow: visible;
+        gap: 0px;
+        text-decoration: none;
+        padding: 30px;
 
-    #zsiMobileCartButton{
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        background-color: #fff;
-        z-index: 9;
+        #icon{
+            border: solid 1px #505050;
+            height: 30px;
+            width: 30px;
+            transform: rotate(45deg);
+            // margin-left: 30px;
+            border-radius: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-        &:hover i{
-            opacity: 0.8;
+            i{
+                color: $secondaryColor;
+                transform: rotate(-45deg);
+                font-size: 16px;
+            }
+        }
+
+        #text{
+            margin-left: 30px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+
+            p{
+                margin-bottom: 0 !important;
+
+                &:first-of-type{
+                    font-size: 20px;
+                }
+            }
+        }
+
+        &:hover{
+            background-color: $lightGray;
+            border-radius: 10px;
+            
+            p{
+                color: $primaryColor;
+            }
         }
     }
+}
+
+@media screen and (max-width: 768px){
+    nav#nbHeader{
+        height: 300px !important;
+
+        #nbLgMenu{
+            display: none;
+        }
+
+        #nbLogo{
+            display: flex;
+            flex-direction: column;
+
+            #name h1{
+                font-size: 45px !important;
+            }
+
+            #tagline p{
+                font-size: 14px !important;
+            }
+        }
+    }
+
+     a#nbEnquiry{
+        flex-direction: column;
+
+        #icon{
+            height: 55px !important;
+            width: 55px !important;
+            border-radius: 12px;
+            margin-bottom: 20px;
+
+            i{
+                color: $secondaryColor;
+                transform: rotate(-45deg);
+                font-size: 25px !important;
+            }
+        }
+
+        #text{
+            margin-left: 0 !important;
+
+            p{
+                text-align: center;
+            }
+        }
+     }
 }
