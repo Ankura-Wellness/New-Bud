@@ -1,196 +1,81 @@
-#banner{
-    background-color: $secondaryColor;
+#nbFrontPage{
+    #container{
+        width:100%;
+        position: relative;
+        overflow: visible;
+        margin-bottom: 80px;
 
-    h2{
-        @extend .primaryFont;
-        color: #fff;
-        line-height: 35px;
-        font-size: 25px;
-    }
-
-    @media only screen and (max-width: 640px) {
-        h2{
-            text-align: center;
-            line-height: 25px;
-            font-size: 16px;
-        }
-    }
-}
-
-#zsiFrontPageCarousel{
-    .carousel-item{
-        aspect-ratio: 1520/667;
-        background-color: $primaryColor;
-
-        .btn{
+        #box{
+            height: 100px;
+            width: 50%;
+            max-width: 579px;
             position: absolute;
-        }
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background-color:#d5d3c4;
+            z-index:999;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 50% 50%;
 
-        #carouselInnerButton06012025{
-            top: 80%;
-            left: 28.5%;
-        }
+            &>div{
+                height: 100px;
+                display: flex;
 
-        #carouselInnerButton20112024{
-            top: 70%;
-            left: 72%;
-        }
-
-        #carouselInnerButton1{
-            top: 70%;
-            left: 70%;
-        }
-
-        #carouselInnerButton2{
-            top: 65%;
-            left: 20%;
-        }
-
-        #carouselInnerButton3{
-            top: 80%;
-            left: 22%;
-        }
-
-        #carouselInnerButton4{
-            top: 80%;
-            left: 70%;
-        }
-        
-        #carouselInnerButton5{
-            top: 65%;
-            left: 45%;
-        }
-
-        #carouselInnerButton6{
-            top: 65%;
-            left: 45%;
+                &>img{
+                    padding: 5%;
+                }
+            }
         }
     }
-}
 
-#zsiFrontPageCarouselFooter{
-    display: flex;
-    background-color: $primaryColor;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
-#categories{
-    .row .col-10{
-        margin-bottom: 30px;
-        display: grid;
-        grid-template-columns: repeat(5,19.2%);
-        grid-column-gap: 1%;
-        align-items: center;
-
-        @media only screen and (max-width: $desktop) {
-            grid-template-columns: repeat(3,31.3%);
-            row-gap: 15px;
-        }
-
-        @media only screen and (max-width: $mobile) {
-            grid-template-columns: repeat(2,49%);
-            row-gap: 15px;
-        }
-
-        a{
-            border-radius: 12px;
-            position: relative;
-            height: 300px;
-            overflow: hidden;
-            box-shadow: rgba(99,99,99,.2) 0 2px 8px 0;
-            transition: all 0.5s;
+    @media only screen and (max-width: 600px) {
+        #container{
+            margin: 20px 0 20px 0;
             display: flex;
-            align-items: center;
             justify-content: center;
-
-            img{
-                width: 100%;
-            }
-
-            > div{
-                border-radius: 0;
-                background-color: $primaryColor;
-                height: 50px;
-                width: 100%;
-                position: absolute;
-                bottom: 0;
-                
-                h6{
-                    @extend .primaryFont;
-                    text-align: center;
-                    vertical-align: middle;
-                    line-height: 50px;
-                    margin-bottom: 0;
-                    height: 100%;
-                    color: #000;
-                }
-
-            }
-
-            &:hover{
-                transform: scale(1.1);
-                opacity: 0.8;
-            }
+            align-items: center;
         }
 
-        @media only screen and (max-width: 390px) {
-            a{
-                height: unset;
-                aspect-ratio: 1/1.5;
+        #box{
+            height: fit-content;
+            width: 90% !important;
+            max-width: unset;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 1fr;
+            position: relative !important;
+            left: unset !important;
+            height: unset !important;
+            transform: translate(0, 0) !important;
+
+            &>div{
+                flex-direction: column;
+                height: unset !important;
+                padding:10px;
 
                 img{
-                    align-self: start;
-                }
-
-                > div h6{
-                    font-size: 12px !important;
+                    padding: 5%;
+                    aspect-ratio:1/1;
                 }
             }
         }
     }
-}
 
-#aboutUs{
-    background-color: #791C15;
-
-    p{
-        color: #fff;
-        font-weight: 300;
+    #box>div>div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
-    .zsiFeatures{
-        display: grid;
-        grid-template-columns: 50% 50%;
+    #box>div h3{
+        @extend .heroFont;
+        margin:0px;
+    }
 
-        & > div{
-            img{
-                filter: unset !important;
-                width: fit-content;
-                display: flex;
-                flex-direction: column;
-            }
-
-            h5{
-                @extend .primaryFont;
-                font-size: 16px;
-                text-align: center;
-            }
-
-            p{
-                text-align: center;
-            }
-
-            &:nth-of-type(1),&:nth-of-type(2){
-                justify-content: end;
-            }
-
-            @media only screen and (max-width: 1200px) {
-                &:nth-of-type(1),&:nth-of-type(2){
-                    justify-content: start;
-                }
-            }
-        }
+    #box>div p{
+        @extend .primaryFont;
+        font-size:14px;
+        margin-bottom: 0;
     }
 }

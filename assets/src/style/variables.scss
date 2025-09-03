@@ -13,6 +13,10 @@ a,h3,h4,h4,h5,h6,p{
     @extend .primaryFont;
 }
 
+body{
+    background-color: transparent !important;
+}
+
 button:disabled{
     cursor: not-allowed;
 }
