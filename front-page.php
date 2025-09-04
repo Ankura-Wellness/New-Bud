@@ -36,6 +36,15 @@ get_header(null,['title'=>'Home']);
         </div>
     </div>
     </div>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <p id="nbAboutUs" class="text-left">
+                    At Ankuräḫ, we are committed to bringing nature’s purest offerings directly to your kitchen. Our products are rooted in the philosophy of simplicity-untouched, unaltered, and full of natural goodness. 
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
 
 
