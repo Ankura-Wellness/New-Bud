@@ -55,8 +55,10 @@ get_header(null,['title'=>'Home']);
                     Our Products
                 </h2>
             </div>
+        </div>
+        <div class="row justify-content-center align-items-center mb-4">
             <div class="col-12 col-md-5 mb-4">
-                <img src="http://localhost/ankurah/wp-content/uploads/2025/04/c43b74b8-5ee8-4418-9476-e24a5cd9eba5.jpeg" style="width: 100%" alt="">
+                <img src="https://ankurah.com/wp-content/uploads/2025/04/c43b74b8-5ee8-4418-9476-e24a5cd9eba5.jpeg" style="width: 100%" alt="">
             </div>
             <div class="col-12 col-md-5 mb-4">
                 <h3 class="text-center primaryFont" style="font-weight: 800; font-size: 2.5rem; margin-top: 1rem;">
@@ -86,6 +88,41 @@ get_header(null,['title'=>'Home']);
                         </li>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center">
+            <div class="col-12 col-md-5 mb-4 d-block d-md-none">
+                <img src="https://ankurah.com/wp-content/uploads/2025/04/a3e42672-6457-4ffb-9b15-fe2ba2b8c524-e1744962262489.jpeg" style="width: 100%" alt="">
+            </div>
+            <div class="col-12 col-md-5 mb-4">
+                <h3 class="text-center primaryFont" style="font-weight: 800; font-size: 2.5rem; margin-top: 1rem;">
+                    Goan Dried Coconut
+                </h3>
+                <h5 class="text-center heroFont">
+                    Enjoy the goodness of pure Goan Coconut in every dish, naturally Fresh, naturally Delicious!
+                </h5>
+                <p>
+                    Sourced from the lush coconut groves of Goa, our Goan Dried Coconut is 100% organic, grown without fertilizers or pesticides, and dried naturally to retain its rich flavor, aroma, and nutrients.
+                </p>
+                <div id="nbFeatures" class="d-flex justify-content-center">
+                    <h6 class="heroFont">
+                        Versatile & Easy to Use
+                    </h6>
+                    <ul>
+                        <li>
+                            Perfect for coconut-based curries – Adds richness & thickness
+                        </li>
+                        <li>
+                            Ideal for traditional Goan sweets – Enhances authentic taste & texture
+                        </li>
+                        <li>
+                            Convenient & long shelf life – No grating or grinding needed
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 mb-4 d-none d-md-block">
+                <img src="https://ankurah.com/wp-content/uploads/2025/04/a3e42672-6457-4ffb-9b15-fe2ba2b8c524-e1744962262489.jpeg" style="width: 100%" alt="">
             </div>
         </div>
     </section>
