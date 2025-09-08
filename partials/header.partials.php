@@ -1,8 +1,8 @@
 <?php
-    /**
-     *  Header UI template file
-     *  @2ndInning
-     */
+  /**
+   *  Header UI template file
+   *  @2ndInning
+   */
 ?>
 
 <nav id="nbHeader" class="container-fluid">
@@ -44,11 +44,12 @@
       </div>
     </div>
   </div>
-  <div id="nbLgMenu">
+</nav>
+<section id="nbLgMenu">
     <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
       Our Story
     </a>
-    <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
+    <!-- <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
       Our Process
     </a>
     <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
@@ -56,6 +57,5 @@
     </a>
     <a id="nbShop" href="/shop" style="pointer-events: none;cursor: not-allowed;">
       Shop Now
-    </a>
-  </div>
-</nav>
+    </a> -->
+</section>

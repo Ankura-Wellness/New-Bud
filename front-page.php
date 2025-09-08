@@ -102,7 +102,7 @@ get_header(null,['title'=>'Home']);
                     Enjoy the goodness of pure Goan Coconut in every dish, naturally Fresh, naturally Delicious!
                 </h5>
                 <p>
-                    Sourced from the lush coconut groves of Goa, our Goan Dried Coconut is 100% organic, grown without fertilizers or pesticides, and dried naturally to retain its rich flavor, aroma, and nutrients.
+                    Sourced from the lush coconut groves of Goa, our <b>Goan Dried Coconut</b> is 100% organic, grown without fertilizers or pesticides, and dried naturally to retain its rich flavor, aroma, and nutrients.
                 </p>
                 <div id="nbFeatures" class="d-flex justify-content-center">
                     <h6 class="heroFont">
