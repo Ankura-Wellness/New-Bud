@@ -8,7 +8,7 @@ $base_url = home_url();
 get_header(null,['title'=>'Home']);
 ?>
 <div id="nbFrontPage">
-    <img class="w-100 d-none d-md-block" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_3.png' ); ?>" alt="">
+    <img class="w-100 d-none d-md-block" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_4.png' ); ?>" alt="">
     <img class="w-100 d-block d-md-none" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_2_m.png' ); ?>" alt="">
     <div id="container">
     <div id="box">
