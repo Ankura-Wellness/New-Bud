@@ -90,13 +90,14 @@
     }
 
     #nbFooterIntro a{
-        color :  darkgrey;
+        color: $primaryColor;        
         text-decoration: none;
         letter-spacing: 1px;
         font-size: 12px;
 
         &:hover{
-            color: $primaryColor;
+            color :  darkgrey;
+
         }
     }
 }

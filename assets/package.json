@@ -14,9 +14,9 @@
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   },
-  "name": "2nd-inning",
-  "description": "=== 2nd Innings === Contributors: binarydharma",
-  "version": "0.1.0",
+  "name": "New Bud",
+  "description": "=== New Bud === Contributors: binarydharma",
+  "version": "0.1.1",
   "main": "index.js",
   "dependencies": {
     "abbrev": "^1.1.1",

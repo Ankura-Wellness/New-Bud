@@ -49,7 +49,7 @@ get_header(null,['title'=>'Home']);
         </div>
     </section>
     <section id="nbProductsIntro" class="container-fluid my-5">
-        <div class="container">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-12 d-flex justify-content-center mt-5 mb-3">
                     <h2 class=" text-center mb-4">
@@ -89,6 +89,9 @@ get_header(null,['title'=>'Home']);
                             </li>
                         </ul>
                     </div>
+                    <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Dried%20Banana%20Munchies">
+                        Enquire Now
+                    </a>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">
@@ -121,6 +124,9 @@ get_header(null,['title'=>'Home']);
                             </li>
                         </ul>
                     </div>
+                    <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi">
+                        Enquire Now
+                    </a>
                 </div>
                 <div class="col-12  col-sm-6 col-md-5 mb-4 d-none d-md-block">
                     <img src="https://ankurah.com/wp-content/uploads/2025/04/a3e42672-6457-4ffb-9b15-fe2ba2b8c524-e1744962262489.jpeg" style="width: 100%" alt="">

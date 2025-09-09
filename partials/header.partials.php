@@ -46,7 +46,7 @@
   </div>
 </nav>
 <section id="nbLgMenu">
-    <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
+    <a href="/our-story">
       Our Story
     </a>
     <!-- <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
