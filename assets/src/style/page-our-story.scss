@@ -1,16 +1,41 @@
-#zsiOurStoryPage{
+#nbPageOurStory{
 
     p#nbFirstParagraph{
         @extend .primaryFont;
-        font-size: 16px;
+        font-size: 18px;
         text-align: justify;
         margin-bottom: 30px;
+        line-height: 25px;
+        letter-spacing: 1px;
 
         &::first-letter{
             @extend .heroFont;
             font-size: 6rem;
             line-height: 0.65;
+            float: left;
             color: $primaryColor;
+        }
+    }
+
+    #nbFoundersNote{
+        background-image: url('http://ankurah.com/wp-content/uploads/2025/09/pattern-9d9863.svg');
+        background-color: rgb(246, 246, 246);
+
+        h2{
+            @extend .heroFont;
+            font-size: 40px;
+            color: $primaryColor;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p{
+            @extend .primaryFont;
+            font-size: 16px;
+            text-align: justify;
+            line-height: 25px;
+            letter-spacing: 1px;
+            font-style: italic;
         }
     }
 }
