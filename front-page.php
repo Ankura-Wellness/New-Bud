@@ -92,6 +92,9 @@ get_header(null,['title'=>'Home']);
                     <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Dried%20Banana%20Munchies">
                         Enquire Now
                     </a>
+                    <a class="btn btn-custom dark" href="http://localhost/ankurah/product/dried-banana-munchies/">
+                        Buy Now
+                    </a>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">

@@ -1,0 +1,93 @@
+#nbSingleProduct{
+    .nbBreadcrumb{
+        font-size: 14px;
+        margin-bottom: 20px;
+
+        a, span{
+            @extend .heroFont;
+            font-size: 16px;
+            text-decoration: none;
+            color: $primaryColor;
+        }
+
+        span{
+            color: gray;
+            cursor: not-allowed;
+        }
+
+        a:hover{
+            text-decoration: underline;
+            color: darken($primaryColor, 10%);
+        }
+    }
+
+    .nbFeatures{
+        justify-content: center;
+        div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img{
+                width: 33% !important;
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+    .nbShortDescription{
+        font-size: 12px;
+        letter-spacing: 1px;
+        line-height: 20px;
+        font-style: italic;
+    }
+
+    .nbSharing{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+
+        a{
+            @extend .primaryFont;
+            color: gray;
+            text-transform: uppercase;
+            margin: 10px;
+            font-size: 14px;
+            font-weight: 300;
+            text-decoration: none;
+            font-size:  12px;
+
+            i{
+                margin-right: 10px;
+            }
+        }
+    }
+}
+//     h1{
+//         font-weight: 700;
+//         margin-bottom: 30px;
+//         text-transform: uppercase;
+//     }
+
+//     h6{
+//         font-size: 14px;
+//         font-style: italic;
+//         font-weight: 300;
+//         color: $textGrey;
+//         margin-bottom: 20px;
+//     }
+
+//     img{
+//         width: 100% !important;
+//     }
+
+//     p,li span{
+//         @extend .secondaryFont;
+//         font-weight: 300;
+//     }
+
+//     h2{
+//         font-weight: 700;
+//         margin: 30px 0 20px 0;
+//     }
+// }

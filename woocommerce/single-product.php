@@ -24,23 +24,23 @@ $product= wc_get_product();
 
 get_header( null , [ 'title' => '' ] ); ?>
 
-<div class="container">
-	<div class="row">
-		<div class="col-12 zsiBreadcrumb">
-			<a href="/shop">
+
+<section id="nbSingleProduct" class="container">
+	<div class="row my-3">
+		<div class="col-12 nbBreadcrumb">
+			<a class="heroFont" href="/shop">
 				Shop
 			</a>
 			/
-			<a href="/shop#cashew">
+			<a class="heroFont" href="/shop#cashew">
 				<?php echo esc_html( get_the_category_by_ID(  $product->category_ids[0] ) ); ?>
 			</a>
 			/
-			<?php print_r($product->name) ?>
+			<span class="heroFont">
+				<?php print_r($product->name) ?>
+			</span>
 		</div>
 	</div>
-</div>
-
-<div class="container">
 	<div class="row">
 		<div class="col-12 col-md-6 position-sticky">
 			<?php
@@ -63,16 +63,14 @@ get_header( null , [ 'title' => '' ] ); ?>
 			</ul>
 		</div>
 		<div class="col-12 col-md-6" ng-controller="cart">
-			<h1 class="primaryFont">
+			<h1 class="primaryFont fw-bold">
 				<?php print_r($product->name) ?>
 			</h1>
 			<?php
 				if($product->stock_status == 'outofstock')
-					echo '<h6 class="numberFont">Out of Stock</h6>';
-				else
-					echo do_shortcode('[jgm-preview-badge id="'.$product->id.'"]');
+					echo '<h6 class="numberFont">Coming Soon</h6>';
 			?>
-			<h4 class="zsiPrice mb-3">
+			<h4 class="nbPrice mb-3">
 				<span>
 					<?php  print_r($product->price) ?>
 				</span>
@@ -81,10 +79,10 @@ get_header( null , [ 'title' => '' ] ); ?>
 				</span> -->
 			</h4>
 			<div class="preUpdate" ng-class="cartManagerCtrl.updated() && !(cartManagerCtrl.getCartItemsTotal() > 9) ? 'ready' : ''">
-				<button class="btn btn-warning w-100 addToCart" data-itemname="<?php echo esc_html( $product->name ); ?>" data-itemid="<?php echo esc_html( $product->id ); ?> " data-itemprice="<?php echo esc_html( $product->price ); ?>"  data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $product->category_ids[0] ) ); ?>" data-itemquantity="1"  ng-click="cartManagerCtrl.addToCart(<?php  print_r($product->id) ?>,true)">
+				<button class="btn btn-custom w-100 addToCart" data-itemname="<?php echo esc_html( $product->name ); ?>" data-itemid="<?php echo esc_html( $product->id ); ?> " data-itemprice="<?php echo esc_html( $product->price ); ?>"  data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $product->category_ids[0] ) ); ?>" data-itemquantity="1"  ng-click="cartManagerCtrl.addToCart(<?php  print_r($product->id) ?>,true)" <?php echo $product->stock_status == 'outofstock' ? 'disabled' : '' ?>>
 					Add to Cart
 				</button>
-				<a class="btn btn-outline-warning mt-3 w-100 checkout" data-data-itemprice="<?php  print_r($product->price) ?>" href="<?php print_r($woocommerce->cart->get_checkout_url().'?add-to-cart='.$product->id.'&quantity=1') ?>">
+				<a class="btn btn-custom dark mt-3 w-100 checkout" data-data-itemprice="<?php  print_r($product->price) ?>" href="<?php print_r($woocommerce->cart->get_checkout_url().'?add-to-cart='.$product->id.'&quantity=1') ?>" <?php echo $product->stock_status == 'outofstock' ? 'style="pointer-events:none;opacity: 0.8;"' : '' ?>>
 					Buy Now
 				</a>
 			</div>
@@ -96,50 +94,46 @@ get_header( null , [ 'title' => '' ] ); ?>
 					A maximum of 10 items may be included in a single order.
 				</p>
 			</div>
-			<div class="d-flex align-items-center justify-content-center zsiFeatures mt-4">
+			<div class="d-flex align-items-center justify-content-center nbFeatures mt-4">
 				<div>
-					<img src="https://zantyes.com/wp-content/uploads/2021/08/Organic.png" alt="">
-                    <h5 class="primaryFont mb-3 text-center">
-                        100% Organic
+					<img src="http://ankurah.com/wp-content/uploads/2025/04/planting.png">
+                    <h5 class="heroFont mb-3 text-center">
+                        Directly From Farm
                     </h5>
 				</div>
 				<div>
-					<img src="https://zantyes.com/wp-content/uploads/2021/08/LocallyFarmed.png" alt="">
-                    <h5 class="primaryFont mb-3 text-center">
-						Locally Farmed
+					<img src="http://ankurah.com/wp-content/uploads/2025/04/organic.png">
+                    <h5 class="heroFont mb-3 text-center">
+						Grown Organically
                     </h5>
 				</div>
 				<div>
-					<img src="https://zantyes.com/wp-content/uploads/2021/08/PremiumQuality.png" alt="">
-                    <h5 class="primaryFont mb-3 text-center">
-						Premium Quality
-                    </h5>
-				</div>
-				<div>
-					<img src="https://zantyes.com/wp-content/uploads/2021/08/LocallyFarmed.png" alt="">
-                    <h5 class="primaryFont mb-3 text-center">
-                        Authentic
+					<img src="http://ankurah.com/wp-content/uploads/2025/09/sprout.png">
+                    <h5 class="heroFont mb-3 text-center">
+						Heirloom Seed Variety
                     </h5>
 				</div>	
 			</div>
 			<hr>
-			<div class="zsiShortDescription mt-3 row justify-content-center">
+			<div class="nbShortDescription mt-3 row justify-content-center">
 				<div class="col-10">
-					<?php print_r($product->short_description) ?>
+					<p class="text-justify primaryFont">
+						<?php print_r($product->short_description) ?>
+					</p>
 				</div>
 			</div>
-			<div class="zsiSharing">
+			<div class="nbSharing">
 				<a href="https://www.facebook.com/sharer.php?u=<?php  echo get_permalink( $product->ID ) ?>">
 					<i class="fa-brands fa-square-facebook">
 					</i>
 					Share
 				</a>
-				<a href="https://twitter.com/share?text=Zantye's Authentic Cashew&url=<?php echo $product->get_permalink() ?>">
+				<a href="https://twitter.com/share?text=Ankuräḫ | Farm to Home Products&url=<?php echo $product->get_permalink() ?>">
 					<i class="fa-brands fa-x-twitter">
 					</i>
 					Tweet
 				</a>
-				<a href="mailto:?subject=Zantye's Authentic Cashew&body='<?php echo $product->get_permalink() ?>">
+				<a href="mailto:?subject=Ankuräḫ | Farm to Home Products&body='<?php echo $product->get_permalink() ?>">
 					<i class="fa-solid fa-envelope">
 					</i>
 					Email
@@ -153,12 +147,12 @@ get_header( null , [ 'title' => '' ] ); ?>
 			<?php get_template_part( 'partials/cart-full-message.partials' ); ?>
 		</div>
 	</div>
-</div>
+</section>
 
-<?php get_template_part( 'partials/about-us.partials' ); ?>
+<?php get_template_part( 'partials/our-motive.partials' ); ?>
 <hr>
 <section class="container zsiCatalogue my-5">
-	<h2 class="primaryFont">
+	<h2 class="heroFont mb-3">
 		Related Products
 	</h2>
 	<div class="row">

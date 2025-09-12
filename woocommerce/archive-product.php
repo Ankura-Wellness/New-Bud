@@ -14,7 +14,7 @@ get_header(null,[ 'title' => 'Shop' ] );
 </section>
 <section class="container zsiCatalogue my-5" ng-controller="cart">
 	<?php
-		$categories = [[ 'name' => ['Plain Cashews','Salted Cashews'] , 'title' => 'Classic Cashews' , 'subtitle' => '' ],[ 'name' => ['Flavoured Cashews'] , 'title' => 'Flavoured Cashews' , 'subtitle' => '' ],[ 'name' => ['Almonds'] , 'title' => 'Almonds' , 'subtitle' => '' ],[ 'name' => ['Pista'] , 'title' => 'Pista' , 'subtitle' => '' ],[ 'name' => ['Cashew Products'] , 'title' => 'Cashew Products' , 'subtitle' => '' ]];
+		$categories = [[ 'name' => ['Dried'] , 'title' => 'Dried' , 'subtitle' => '' ]];
 
 		foreach($categories as $category){
 			// if(sizeof($products) > 0){

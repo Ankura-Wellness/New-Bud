@@ -22,20 +22,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <!-- <div class="col-6 col-sm-4 col-md-3 product"> -->
-<div class=" <?php echo esc_html( $args['class'] ); ?> <?php echo esc_html( $args['data']['product']->stock_status == 'outofstock' ? 'zsiDisabledProduct' : '' ); ?>  product">
-	<a class="zsi_product" data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" href=" <?php echo get_post_permalink($args['data']['product']->id) ?> ">
+<div class="nbSampleProduct <?php echo esc_html( $args['class'] ); ?> <?php echo esc_html( $args['data']['product']->stock_status == 'outofstock' ? 'zsiDisabledProduct' : '' ); ?>  product">
+	<a data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" href=" <?php echo get_post_permalink($args['data']['product']->id) ?> ">
 		<div class="w-100 ratio ratio-1x1 overflow-hidden">
 			<img src="<?php echo wp_get_attachment_url($args['data']['product']->get_image_id(),'thumbnail') ?>" alt="" onload="">
 		</div>
 		<div>
 		
 		</div>
-		<h4 class="primaryFont mt-3">
+		<h4 class="mt-3">
 			<?php echo esc_html( preg_replace('/[0-9]{0,4}\s?gms?/','',$args['data']['product']->name) ); ?>
 		</h4>
 		<hr>
 		<div class="d-flex justify-content-between">
-			<h5 class="secondaryFont text-danger fw-bold zsiPrice">
+			<h5 class="secondaryFont text-danger fw-bold nbPrice">
 				<span>
 					<?php echo esc_html( $args['data']['product']->price ); ?>
 				</span>
@@ -43,7 +43,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<div class="text-black-50 secondaryFont">
 				<?php 
 					if($args['data']['product']->stock_status == 'outofstock')
-						echo '<h6 class="numberFont">Out of Stock</h6>';
+						echo '<h6 class="numberFont">Coming Soon</h6>';
 					else
 						echo do_shortcode('[jgm-preview-badge id="'.$args['data']['product']->id.'"]');
 
@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 		</div>
 	</a>
-	<button class="btn btn-warning w-100 addToCart" ng-disabled="cartManagerCtrl.getCartItemsTotal() > 9" data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" data-itemquantity="1" ng-click="cartManagerCtrl.addToCart(<?php echo esc_html( $args['data']['product']->id); ?>,true)">
+	<button class="btn btn-custom w-100 addToCart" data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" data-itemquantity="1" ng-click="cartManagerCtrl.addToCart(<?php echo esc_html( $args['data']['product']->id); ?>,true)" <?php echo $args['data']['product']->stock_status == 'outofstock' ? 'disabled' : '' ?>>
 		Add to Cart
 	</button>
 	<p>
