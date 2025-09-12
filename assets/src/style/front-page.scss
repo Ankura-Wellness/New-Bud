@@ -36,12 +36,13 @@
         float: left;
         font-size: 6rem;
         line-height: 0.65;
+        color: $primaryColor;
     }
 
     @media only screen and (max-width: 995px) {
         #container{
             #box{
-                width: 70%;
+                width: fit-content;
 
                 p{
                     font-size: 12px;

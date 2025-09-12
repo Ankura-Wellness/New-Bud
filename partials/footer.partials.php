@@ -68,7 +68,7 @@
 					<h4 class="mt-3">
 						Available to contact us from 9AM to 6PM
 					</h4>
-					<a class="btn btn-outline-dark btn-lg fw-bolder secondaryFont mb-3" href="https://wa.me/917620805302?text=Hi">
+					<a class="btn btn-custom fw-bolder secondaryFont mb-3" href="https://wa.me/917620805302?text=Hi">
 						<i class="fa-brands fa-whatsapp mr-4">
 						</i>
 						&nbsp;
@@ -90,7 +90,7 @@
     	<div class="w-100 d-flex flex-sm-column flex-md-row justify-content-between">
       		<div class="d-flex justify-content-center justify-content-md-start">
 				<a href="/about_us">
-					Ankuräḫ 2019 All Rights Reserved 
+					Ankuräḫ 2025 All Rights Reserved 
 				</a>
       		</div>
 			<div class="d-flex justify-content-center justify-content-md-end">

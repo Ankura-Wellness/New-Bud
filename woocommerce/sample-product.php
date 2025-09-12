@@ -33,17 +33,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h4 class="mt-3">
 			<?php echo esc_html( preg_replace('/[0-9]{0,4}\s?gms?/','',$args['data']['product']->name) ); ?>
 		</h4>
-		<hr>
-		<div class="d-flex justify-content-between">
-			<h5 class="secondaryFont text-danger fw-bold nbPrice">
+		<!-- <hr> -->
+		<div class="d-flex justify-content-between flex-wrap">
+			<h5 class="secondaryFont text-danger fw-bold nbPrice text-nowrap">
 				<span>
 					<?php echo esc_html( $args['data']['product']->price ); ?>
 				</span>
 			</h5>
-			<div class="text-black-50 secondaryFont">
 				<?php 
 					if($args['data']['product']->stock_status == 'outofstock')
-						echo '<h6 class="numberFont">Coming Soon</h6>';
+						echo '<h6 class="numberFont mb-0">Coming Soon</h6>';
 					else
 						echo do_shortcode('[jgm-preview-badge id="'.$args['data']['product']->id.'"]');
 
@@ -57,11 +56,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<!-- <i class="fa-solid fa-basket-shopping">
 				</i>
 				'. $product->total_sales .' -->
-			</div>
 		</div>
 	</a>
-	<button class="btn btn-custom w-100 addToCart" data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" data-itemquantity="1" ng-click="cartManagerCtrl.addToCart(<?php echo esc_html( $args['data']['product']->id); ?>,true)" <?php echo $args['data']['product']->stock_status == 'outofstock' ? 'disabled' : '' ?>>
-		Add to Cart
+	<button class="btn btn-custom w-100 addToCart text-nowrap" data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" data-itemquantity="1" ng-click="cartManagerCtrl.addToCart(<?php echo esc_html( $args['data']['product']->id); ?>,true)" <?php echo $args['data']['product']->stock_status == 'outofstock' ? 'disabled' : '' ?>>
+		<span class="d-block d-sm-none">
+			<i class="fa-solid fa-cart-plus">
+			</i>
+			Add
+		</span> 
+		<span class="d-none d-sm-block">
+			Add to Cart
+		</span>
 	</button>
 	<p>
 </div>

@@ -86,14 +86,14 @@ get_header( null , [ 'title' => '' ] ); ?>
 					Buy Now
 				</a>
 			</div>
-			<div class="preHidden" ng-class="(cartManagerCtrl.updated() && cartManagerCtrl.getCartItemsTotal() > 9) ? 'ready' : ''">
+			<!-- <div class="preHidden" ng-class="(cartManagerCtrl.updated() && cartManagerCtrl.getCartItemsTotal() > 9) ? 'ready' : ''">
 				<p class="text-danger secondaryFont text-center align-middle" style="font-size: 14px;font-weight: 700;margin:10px 15px 0 0;">
 					<span style="font-weight: 900">
 						Cart Full
 					</span>
 					A maximum of 10 items may be included in a single order.
 				</p>
-			</div>
+			</div> -->
 			<div class="d-flex align-items-center justify-content-center nbFeatures mt-4">
 				<div>
 					<img src="http://ankurah.com/wp-content/uploads/2025/04/planting.png">
@@ -102,7 +102,7 @@ get_header( null , [ 'title' => '' ] ); ?>
                     </h5>
 				</div>
 				<div>
-					<img src="http://ankurah.com/wp-content/uploads/2025/04/organic.png">
+					<img src="http://ankurah.com/wp-content/uploads/2025/09/organic.png">
                     <h5 class="heroFont mb-3 text-center">
 						Grown Organically
                     </h5>

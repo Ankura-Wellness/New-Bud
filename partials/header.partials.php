@@ -8,22 +8,16 @@
 <nav id="nbHeader" class="container-fluid">
   <div class="container h-100">
     <div class="row h-100">
-      <div class="col-6 d-flex justify-content-center align-items-center">
-        <a href="/" id="nbLogo">
-          <img id="logo" height="100px" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/logo_sans_text.svg' ); ?>" alt="">
-          <div id="name">
-            <h1 class="heroFont">
-              Ankuräh
-            </h1>
-          </div>
-          <div id="tagline">
-            <p>
-              ।। प्रकृति के साथ सामंजस्य ।।
-            </p>
-          </div>
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <a id="nbLogo" href="/"  class="d-flex flex-column justify-content-center align-items-start" >
+          <h1 class="heroFont text-left">
+            Ankuräh
+          </h1>
+          <p class="taglineFont">
+            ।। प्रकृति के साथ सामंजस्य ।।
+          </p>
         </a>
-      </div>
-      <div class="col-6 d-flex justify-content-end align-items-center ">
+        <img id="logo" style="height: 70px" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/logo_sans_text.svg' ); ?>" alt="">
         <a href="tel:917620805302" id="nbEnquiry">
           <div id="icon">
             <i class="fa-solid fa-phone">
@@ -33,12 +27,9 @@
             <p style="font-weight: 800;">
               For Enquiries
             </p>
-            <p style="font-size: 14px;color: grey">
-              <span class="d-none d-sm-block">
-                Contact
-              </span>
-               +91-7620805302
-            </p>
+            <span>
+              Contact +91-7620805302
+            </span>
           </div>
         </a>
       </div>
@@ -54,8 +45,8 @@
     </a>
     <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
       Sustainable Consumption
-    </a>
-    <a id="nbShop" href="/shop" style="pointer-events: none;cursor: not-allowed;">
-      Shop Now
     </a> -->
+    <a id="nbShop" href="/shop">
+      Shop Now
+    </a> 
 </section>

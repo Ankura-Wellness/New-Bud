@@ -13,27 +13,38 @@ get_header(null,['title'=>'Home']);
     <div id="container">
     <div id="box">
         <div>
-        <img src="http://ankurah.com/wp-content/uploads/2025/04/planting.png">
+            <img src="http://ankurah.com/wp-content/uploads/2025/04/planting.png">
+            <div>
+                <h3>
+                    Directly from Farm
+                </h3>
+                <p>
+                    We farm & procure directly from farmers.
+                </p>
+            </div>
+        </div>
         <div>
-            <h3>
-            Directly from Farm
-            </h3>
-            <p>
-            We farm & procure directly from farmers.
-            </p>
+            <img src="http://ankurah.com/wp-content/uploads/2025/04/organic.png">
+            <div>
+                <h3>
+                    Grown Organically
+                </h3>
+                <p>
+                    Our products are grown using organic methods.
+                </p>
+            </div>
         </div>
-        </div>
-        <div>
-        <img src="http://ankurah.com/wp-content/uploads/2025/04/organic.png">
-        <div>
-            <h3>
-            Grown Organically
-            </h3>
-            <p>
-            Our products are grown using organic methods.
-            </p>
-        </div>
-        </div>
+        <!-- <div>
+            <img src="http://ankurah.com/wp-content/uploads/2025/09/sprout.png">
+            <div>
+                <h3>
+                    Heirloom Seed Variety
+                </h3>
+                <p>
+                    Grown using native heirloom seed varieties, indigenous to the region.
+                </p>
+            </div>
+        </div> -->
     </div>
     </div>
     <section class="container my-5">
@@ -69,7 +80,7 @@ get_header(null,['title'=>'Home']);
                         Fuel your day with nature's sweetness, one bite at a time
                     </h5>
                     <p>
-                        Indulge in the pure goodness of nature with <b>Dried Banana Munchies</b> 100% natural, sun-dried, and free from added sugars, preservatives, or chemicals. Handpicked from lush organic farms, our bananas are grown without fertilizers or pesticides, ensuring the highest quality and rich nutritional benefits in every bite
+                        Indulge in the pure goodness of nature with <b>Dried Banana Munchies</b> 100% natural, dried, and free from added sugars, preservatives, or chemicals. Handpicked from lush organic farms, our bananas are grown without fertilizers or pesticides, ensuring the highest quality and rich nutritional benefits in every bite
                     </p>
                     <div id="nbFeatures" class="d-flex justify-content-center">
                         <h6 class="heroFont">
@@ -92,9 +103,9 @@ get_header(null,['title'=>'Home']);
                     <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Dried%20Banana%20Munchies">
                         Enquire Now
                     </a>
-                    <!-- <a class="btn btn-custom dark" href="http://localhost/ankurah/product/dried-banana-munchies/">
+                    <a class="btn btn-custom dark" href="http://localhost/ankurah/product/dried-banana-munchies/">
                         Buy Now
-                    </a> -->
+                    </a>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center">
