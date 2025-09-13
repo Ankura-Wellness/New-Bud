@@ -5,7 +5,7 @@
      */
 $base_url = home_url();
 
-get_header(null,['title'=>'Home']);
+get_header(null,['title'=>'']);
 ?>
 <div id="nbFrontPage">
     <img class="w-100 d-none d-md-block" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_4.png' ); ?>" alt="">
@@ -24,7 +24,7 @@ get_header(null,['title'=>'Home']);
             </div>
         </div>
         <div>
-            <img src="http://ankurah.com/wp-content/uploads/2025/04/organic.png">
+            <img src="http://ankurah.com/wp-content/uploads/2025/09/organic.png">
             <div>
                 <h3>
                     Grown Organically

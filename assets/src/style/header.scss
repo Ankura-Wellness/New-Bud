@@ -32,7 +32,7 @@ nav#nbHeader{
             grid-row-start: 3;
             padding-left: 20px;
             display: flex;
-            align-items: start;
+            align-items: center;
             text-wrap: nowrap;
          
             p{
@@ -106,6 +106,18 @@ nav#nbHeader{
         //     }
         // }
     }
+
+    .navbar-toggler{
+        border: 2px solid $primaryColor !important;
+
+        span.navbar-toggler-icon{
+            color: $primaryColor !important;
+        }
+    }
+
+    .nav-item a{
+        font-size: 12px;
+    }
 }
 
 #nbLgMenu{
@@ -133,32 +145,41 @@ nav#nbHeader{
             font-weight: 800;
         }
     }
-
 }
 
 @media screen and (max-width: 768px){
     nav#nbHeader{
-        height: 199px !important;
-
-        #nbLgMenu{
-            display: none;
-        }
+        height: fit-content !important;
 
         #nbLogo{
-            display: flex;
-            flex-direction: column;
+            display: flex !important;
+            align-items: center !important;
+            padding: 10px !important;
 
-            #name h1{
+            h1{
                 font-size: 45px !important;
             }
 
-            #tagline p{
+            p{
                 font-size: 14px !important;
+                margin-bottom: 0 !important;
+            }
+
+            img{
+                margin: 10px;
             }
         }
     }
 
-     a#nbEnquiry{
+    #nbLgMenu{
+        height: 8px !important;
+
+        a{
+            display: none;
+        }
+    }
+
+    a#nbEnquiry{
         flex-direction: column;
 
         #icon{
@@ -181,5 +202,5 @@ nav#nbHeader{
                 text-align: center;
             }
         }
-     }
+    }
 }

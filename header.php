@@ -21,6 +21,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap" rel="stylesheet">
         
         <script src="https://kit.fontawesome.com/8d5d6f5c26.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
     <body <?php body_class();?> ng-app="zsi" ng-controller="page" ng-class="cartManagerCtrl.cartState() ? 'hideScroller' : ''">
         <?php wp_body_open(); ?>
