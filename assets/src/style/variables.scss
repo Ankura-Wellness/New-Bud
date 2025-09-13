@@ -108,7 +108,8 @@ label.mandatory::after{
 }
 
 .nbPrice{
-    color: #dc3545;
+    color: $primaryColor;
+    font-size: 35px;
 
     small,span:nth-of-type(1){
         @extend .taglineFont;

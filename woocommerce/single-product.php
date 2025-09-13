@@ -68,7 +68,7 @@ get_header( null , [ 'title' => '' ] ); ?>
 			</h1>
 			<?php
 				if($product->stock_status == 'outofstock')
-					echo '<h6 class="numberFont">Coming Soon</h6>';
+					echo '<h6 class="numberFont text-secondary">Coming Soon</h6>';
 			?>
 			<h4 class="nbPrice mb-3">
 				<span>

@@ -30,19 +30,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div>
 		
 		</div>
-		<h4 class="mt-3">
+		<h4 class="mt-3 text-dark">
 			<?php echo esc_html( preg_replace('/[0-9]{0,4}\s?gms?/','',$args['data']['product']->name) ); ?>
 		</h4>
 		<!-- <hr> -->
 		<div class="d-flex justify-content-between flex-wrap">
-			<h5 class="secondaryFont text-danger fw-bold nbPrice text-nowrap">
+			<h5 class="secondaryFont fw-bold nbPrice text-nowrap">
 				<span>
 					<?php echo esc_html( $args['data']['product']->price ); ?>
 				</span>
 			</h5>
 				<?php 
 					if($args['data']['product']->stock_status == 'outofstock')
-						echo '<h6 class="numberFont mb-0">Coming Soon</h6>';
+						echo '<h6 class="numberFont text-secondary mb-0">Coming Soon</h6>';
 					else
 						echo do_shortcode('[jgm-preview-badge id="'.$args['data']['product']->id.'"]');
 
