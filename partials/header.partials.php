@@ -5,10 +5,9 @@
    */
 ?>
 
-<nav id="nbHeader" class="container-fluid navbar navbar-expand-lg">
+<nav id="nbHeader" class="container-fluid navbar">
   <div class="container h-100">
-    <div class="row h-100">
-      <div class="col-12 d-flex justify-content-between align-items-center">
+      <div class="col-12  d-flex justify-content-between align-items-center">
         <a id="nbLogo" href="/"  class="d-flex justify-content-center align-items-start" >
           <div class="d-flex flex-column justify-content-center">
             <h1 class="heroFont text-left">
@@ -35,57 +34,64 @@
             </span>
           </div>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" >
-          <i class="bi bi-chevron-compact-down">
+        <button class="navbar-toggler d-block d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <i class="fa-solid fa-chevron-left">
           </i>
         </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title heroFont" id="offcanvasNavbarLabel">
+              Ankuräḫ
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link" href="/shop">
+                  Shop Now
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/our-story">
+                  Our Story
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Legal
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      Terms & Conditions
+                    </a>
+                  </li>
+                  <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/our-story">
-          Our Story
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link"  href="/shop">
-          Shop Now
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Legal
-        </a>
-        <ul class="dropdown-menu">
-          <li>
-            <a class="dropdown-item" href="/terms-and-conditions">
-              Terms & Conditions
-            </a>
-          </li>
-          <li>
-            <a class="dropdown-item" href="/privacy-policy">
-              Privacy Policy
-            </a>
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </div>
 </nav>
 <section id="nbLgMenu">
-    <a href="/ankurah/our-story">
-      Our Story
-    </a>
+  <a href="/ankurah/our-story">
+    Our Story
+  </a>
     <!-- <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
       Our Process
     </a>
     <a href="/our-story" style="pointer-events: none;cursor: not-allowed;">
       Sustainable Consumption
     </a> -->
-    <a id="nbShop" href="/shop">
-      Shop Now
-    </a> 
+  <a id="nbShop" href="/shop">
+    Shop Now
+  </a> 
 </section>

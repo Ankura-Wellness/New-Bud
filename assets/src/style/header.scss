@@ -3,6 +3,8 @@ nav#nbHeader{
     border: 1px solid $lightGray;
     height: 100px;
     position: relative;
+    padding: 0 !important;
+    
 
     #nbLogo{
         position: relative;
@@ -109,6 +111,7 @@ nav#nbHeader{
 
     .navbar-toggler{
         border: 2px solid $primaryColor !important;
+        box-shadow: 0 0 0 0;
 
         span.navbar-toggler-icon{
             color: $primaryColor !important;
@@ -117,6 +120,7 @@ nav#nbHeader{
 
     .nav-item a{
         font-size: 12px;
+        font-weight: 700;
     }
 }
 
