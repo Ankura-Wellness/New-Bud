@@ -32,15 +32,12 @@
 					</h4>
 					<ul id="legals">
 					<?php
-						// $menus = zsi_get_menu('zsi_legal_menu');
-						// if(sizeof($menus) > 0 ){} else {
 						$menus = [
 							[ 'menu' => [ 'url' => '/terms-and-conditions' , 'title' => 'Terms & Conditions' ]],
 							[ 'menu' => [ 'url' => '/privacy-policy' , 'title' => 'Privacy Policy' ]],
-							[ 'menu' => [ 'url' => '/faqs' , 'title' => 'FAQs' ]],
-							// [ 'menu' => [ 'url' => '/csr' , 'title' => 'CSR' ]]
+							[ 'menu' => [ 'url' => '/refund-and-cancellation-policy' , 'title' => 'Refund & Cancellations Policy' ]],
+							[ 'menu' => [ 'url' => '/return-policy' , 'title' => 'Return Policy' ]],
 						];
-						// }
 
 						foreach( $menus as $menu ){
 							print_r('<li><a href="'.$menu['menu']['url'].'">'.$menu['menu']['title'].'</a></li>');

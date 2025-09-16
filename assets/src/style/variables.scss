@@ -131,3 +131,16 @@ label.mandatory::after{
         font-weight: 300;
     }
 }
+
+#sdPolicies{
+    h1{
+        @extend .heroFont;
+    }
+
+    li{
+        @extend .primaryFont;
+        line-height: 21px;
+        letter-spacing: 1px;
+        font-size: 14px;
+    }
+}

@@ -5,241 +5,89 @@
      */
 $base_url = home_url();
 
-get_header(null,['title'=>'Terms & Conditions']);
+get_header(null,['title'=>'']);
 ?>
-<div id="zsiFaqsTermsAndConditions">
+<div id="sdPolicies">
     <div class="w-100 d-flex justify-content-center align-items-center px-0" style="color: #fff;height: 250px;background-blend-mode: overlay;background-color: rgba(103, 76, 20, 0.96);background-size: cover;">
-        <h1 style="font-family:'KozGoPro-Bold';font-size: 72px !important;font-weight: 800;">
-            Terms & Conditions
+        <h1 class="heroFont" style="font-size: 3rem;">
+            Terms &amp; Conditions
         </h1>
     </div>
-    <div class="container">
+    <div class="container my-5">
         <div class="row">
             <div class="col-12">
-                <div class="card mt-5">
-                    <div class="card-body">
-                        <h2>
-                            Personal Information
-                        </h2>
-                        <p>
-                            Akhil Babal Prabhu is the licensed owner of www.ankurah.com. Ankuräḫ respects your privacy. This Privacy Policy provides succinctly the manner your data is collected and used by Ankuräḫ on the Site. As a visitor to the Site/ Customer you are advised to please read the Privacy Policy carefully. By accessing the services provided by the Site you agree to the collection and use of your data by Mr. Prabhu in the manner provided in this Privacy Policy.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="accordion my-5" id="termsAndConditionsAccordion">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Services Overview
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                As part of the registration process on the Site, Ankuräḫ may collect the following personally identifiable information about you: Name including first and last name, alternate email address, mobile phone number and contact details, Postal code, Demographic profile (like your age, gender, occupation, education, address etc.) and information about the pages on the site you visit/access, the links you click on the site, the number of times you access the page and any such browsing information.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                Eligibility
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                Services of the Site would be available to only select geographies in India. Persons who are “incompetent to contract” within the meaning of the Indian Contract Act, 1872 including un-discharged insolvents etc. are not eligible to use the Site. If you are a minor i.e. under the age of 18 years but at least 13 years of age you may use the Site only under the supervision of a parent or legal guardian who agrees to be bound by these Terms of Use. If your age is below 18 years your parents or legal guardians can transact on behalf of you if they are registered users. You are prohibited from purchasing any material which is for adult consumption and the sale of which to minors is prohibited.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                                License & Site access
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                Ankuräḫ grants you a limited sub-license to access and make personal use of this site and not to download (other than page caching) or modify it, or any portion of it, except with express written consent of Ankuräḫ . This license does not include any resale or commercial use of this site or its contents; any collection and use of any product listings, descriptions, or prices; any derivative use of this site or its contents; any downloading or copying of account information for the benefit of another merchant; or any use of data mining, robots, or similar data gathering and extraction tools. This site or any portion of this site may not be reproduced, duplicated, copied, sold, resold, visited, or otherwise exploited for any commercial purpose without express written consent of Ankuräḫ. You may not frame or utilize framing techniques to enclose any trademark, logo, or other proprietary information (including images, text, page layout, or form) of the Site or of Ankuräḫ and its affiliates without express written consent. You may not use any meta tags or any other “hidden text” utilizing the Site’s or Ankuräḫ’s name or SGSPL’s name or trademarks without the express written consent of Ankuräḫ. Any unauthorized use terminates the permission or license granted by Ankuräḫ.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFour">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                Account & Registration Obligations
-                            </button>
-                        </h2>
-                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                All shoppers have to register and login for placing orders on the Site. You have to keep your account and registration details current and correct for communications related to your purchases from the site.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFive">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
-                                Pricing
-                            </button>
-                        </h2>
-                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                All the products listed on the Site will be sold at MRP unless otherwise specified. The prices mentioned at the time of ordering will be the prices charged on the date of the delivery. In case the prices are higher or lower on the date of delivery no additional charges will be collected or refunded as the case may be at the time of the delivery of the order.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSix">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
-                                Cancellation by Site / Customer
-                            </button>
-                        </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                You as a customer can cancel your order anytime up to the cut-off time of the slot for which you have placed an order by calling our customer service. In such a case we will refund any payments already made by you for the order after deducting the payment charges borne by us for that particular transection. If we suspect any fraudulent transaction by any customer or any transaction which defies the terms & conditions of using the website, we at our sole discretion could cancel such orders. We will maintain a negative list of all fraudulent transactions and customers and would deny access to them or cancel any orders placed by them.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingSeven">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">
-                                Return & Refunds
-                            </button>
-                        </h2>
-                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                We have a “No Returns Policy” which doesn’t entitle all our members to return the product at the time of delivery if due to some reason they are not satisfied with the quality or freshness of the product or for any other reason. Once the payment for the goods are made they will be considered as sold and will not be allowed to return back to Ankuräḫ.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingEight">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
-                                You Agree and Confirm
-                            </button>
-                        </h2>
-                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                That in the event that a non-delivery occurs on account of a mistake by you (i.e. wrong name or address or any other wrong information) any extra cost incurred by Ankuräḫ for redelivery shall be claimed from you.<br>
-                                That you will use the services provided by the Site, its affiliates, consultants and contracted companies, for lawful purposes only and comply with all applicable laws and regulations while using and transacting on the Site.<br>
-                                You will provide authentic and true information in all instances where such information is requested of you. Ankuräḫ reserves the right to confirm and validate the information and other details provided by you at any point of time. If upon confirmation your details are found not to be true (wholly or partly), it has the right in its sole discretion to reject the registration and debar you from using the Services and / or other affiliated websites without prior intimation whatsoever.<br>
-                                That you are accessing the services available on this Site and transacting at your sole risk and are using your best and prudent judgment before entering into any transaction through this Site.<br>
-                                That the address at which delivery of the product ordered by you is to be made will be correct and proper in all respects.<br>
-                                That before placing an order you will check the product description carefully. By placing an order for a product you agree to be bound by the conditions of sale included in the item’s description.<br>
-                                You may not use the Site for any of the following purposes.
-                                <br><br>
-                                Disseminating any unlawful, harassing, libelous, abusive, threatening, harmful, vulgar, obscene, or otherwise objectionable material.<br>
-                                Transmitting material that encourages conduct that constitutes a criminal offence or results in civil liability or otherwise breaches any relevant laws, regulations or code of practice.<br>
-                                Gaining unauthorized access to other computer systems.<br>
-                                Interfering with any other person’s use or enjoyment of the Site.<br>
-                                Breaching any applicable laws.<br>
-                                Interfering or disrupting networks or web sites connected to the Site.<br>
-                                Making, transmitting or storing electronic copies of materials protected by copyright without the permission of the owner.
-                                <br><br>
-                                <b>Colours:</b>
-                                We have made every effort to display the colours of our products that appear on the Website as accurately as possible. However, as the actual colours you see will depend on your monitor, we cannot guarantee that your monitor’s display of any colour will be accurate.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingNine">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
-                                Modification of Terms & Conditions of Service
-                            </button>
-                        </h2>
-                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                Ankuräḫ may at any time modify the Terms & Conditions of Use of the Website without any prior notification to you. You can access the latest version of these Terms & Conditions at any given time on the Site. You should regularly review the Terms & Conditions on the Site. In the event the modified Terms & Conditions is not acceptable to you, you should discontinue using the Service. However, if you continue to use the Service you shall be deemed to have agreed to accept and abide by the modified Terms & Conditions of Use of this Site.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTen">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
-                                Governing Law and Jurisdiction
-                            </button>
-                        </h2>
-                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                This User Agreement shall be construed in accordance with the applicable laws of India. The Courts at Goa shall have exclusive jurisdiction in any proceedings arising out of this agreement. Any dispute or difference either in interpretation or otherwise, of any terms of this User Agreement between the parties hereto, the same shall be referred to an independent arbitrator who will be appointed by Ankuräḫ and his decision shall be final and binding on the parties hereto. The above arbitration shall be in accordance with the Arbitration and Conciliation Act, 1996 as amended from time to time. The arbitration shall be held in Goa. The High Court of judicature at Goa alone shall have the jurisdiction and the Laws of India shall apply.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingEleven">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">
-                                Reviews, Feedback, Submissions
-                            </button>
-                        </h2>
-                        <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                All reviews, comments, feedback, postcards, suggestions, ideas, and other submissions disclosed, submitted or offered to the Site on or by this Site or otherwise disclosed, submitted or offered in connection with your use of this Site (collectively, the “Comments”) shall be and remain the property of Ankuräḫ . Such disclosure, submission or offer of any Comments shall constitute an assignment to Ankuräḫ of all worldwide rights, titles and interests in all copyrights and other intellectual properties in the Comments. Thus, Ankuräḫ owns exclusively all such rights, titles and interests and shall not be limited in any way in its use, commercial or otherwise, of any Comments. Ankuräḫ will be entitled to use, reproduce, disclose, modify, adapt, create derivative works from, publish, display and distribute any Comments you submit for any purpose whatsoever, without restriction and without compensating you in any way. Ankuräḫ is and shall be under no obligation (1) to maintain any Comments in confidence; (2) to pay you any compensation for any Comments; or (3) to respond to any Comments. You agree that any Comments submitted by you to the Site will not violate this policy or any right of any third party, including copyright, trademark, privacy or other personal or proprietary right(s), and will not cause injury to any person or entity. You further agree that no Comments submitted by you to the Website will be or contain libelous or otherwise unlawful, threatening, abusive or obscene material, or contain software viruses, political campaigning, commercial solicitation, chain letters, mass mailings or any form of “spam”.
-                                <br><br>
-                                Ankuräḫ does not regularly review posted Comments, but does reserve the right (but not the obligation) to monitor and edit or remove any Comments submitted to the Site. You grant Ankuräḫ the right to use the name that you submit in connection with any Comments. You agree not to use a false email address, impersonate any person or entity, or otherwise mislead as to the origin of any Comments you submit. You are and shall remain solely responsible for the content of any Comments you make and you agree to indemnify Ankuräḫ and its affiliates for all claims resulting from any Comments you submit. Ankuräḫ and its affiliates take no responsibility and assume no liability for any Comments submitted by you or any third party.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwelve">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="true" aria-controls="collapseTwelve">
-                                Copyright & Trademark
-                            </button>
-                        </h2>
-                        <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                Ankuräḫ its suppliers and licensors expressly reserve all intellectual property rights in all text, programs, products, processes, technology, content and other materials, which appear on this Site. Access to this Website does not confer and shall not be considered as conferring upon anyone any license under any of Ankuräḫ or any third party’s intellectual property rights. All rights, including copyright, in this website are owned by or licensed to Ankuräḫ . Any use of this website or its contents, including copying or storing it or them in whole or part, other than for your own personal, non-commercial use is prohibited without the permission of Ankuräḫ. You may not modify, distribute or re-post anything on this website for any purpose.
-                                <br><br>
-                                The names and logos and all related product and service names, design marks and slogans are the trademarks or service marks of Ankuräḫ , its affiliates, its partners or its suppliers. All other marks are the property of their respective companies. No trademark or service mark license is granted in connection with the materials contained on this Site. Access to this Site does not authorize anyone to use any name, logo or mark in any manner.
-                                <br><br>
-                                References on this Site to any names, marks, products or services of third parties or hypertext links to third party sites or information are provided solely as a convenience to you and do not in any way constitute or imply Ankuräḫ endorsement, sponsorship or recommendation of the third party, information, product or service.
-                                <br><br>
-                                Ankuräḫ is not responsible for the content of any third party sites and does not make any representations regarding the content or accuracy of material on such sites. If you decide to link to any such third party websites, you do so entirely at your own risk.
-                                <br><br>
-                                All materials, including images, text, illustrations, designs, icons, photographs, programs, music clips or downloads, video clips and written and other materials that are part of this Website (collectively, the “Contents”) are intended solely for personal, non-commercial use. You may download or copy the Contents and other downloadable materials displayed on the Website for your personal use only. No right, title or interest in any downloaded materials or software is transferred to you as a result of any such downloading or copying. You may not reproduce (except as noted above), publish, transmit, distribute, display, modify, create derivative works from, sell or participate in any sale of or exploit in any way, in whole or in part, any of the Contents, the Website or any related software. All software used on this Website is the property of Ankuräḫ or its licensees and suppliers and protected by Indian and international copyright laws. The Contents and software on this Website may be used only as a shopping resource. Any other use, including the reproduction, modification, distribution, transmission, republication, display, or performance, of the Contents on this Website is strictly prohibited. Unless otherwise noted, all Contents are copyrights, trademarks, trade dress and/or other intellectual property owned, controlled or licensed by Ankuräḫ , one of its affiliates or by third parties who have licensed their materials to Ankuräḫ and are protected by Indian and international copyright laws. The compilation (meaning the collection, arrangement, and assembly) of all Contents on this Website is the exclusive property of Ankuräḫ and is also protected by Indian and international copyright laws.
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThirteen">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen" aria-expanded="true" aria-controls="collapseThirteen">
-                                Objectionable Material
-                            </button>
-                        </h2>
-                        <div id="collapseThirteen" class="accordion-collapse collapse" aria-labelledby="headingThirteen" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                You understand that by using this Site or any services provided on the Site, you may encounter Content that may be deemed by some to be offensive, indecent, or objectionable, which Content may or may not be identified as such. You agree to use the Site and any service at your sole risk and that to the fullest extent permitted under applicable law, Ankuräḫ and its affiliates shall have no liability to you for Content that may be deemed offensive, indecent, or objectionable to you.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFourteen">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">
-                                Indemnity
-                            </button>
-                        </h2>
-                        <div id="collapseFourteen" class="accordion-collapse collapse" aria-labelledby="headingFourteen" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                You agree to defend, indemnify and hold harmless Ankuräḫ , its employees, directors, officers, agents and their successors and assigns from and against any and all claims, liabilities, damages, losses, costs and expenses, including attorney’s fees, caused by or arising out of claims based upon your actions or inactions, which may result in any loss or liability to Ankuräḫ or any third party including but not limited to breach of any warranties, representations or undertakings or in relation to the non-fulfillment of any of your obligations under this User Agreement or arising out of the your violation of any applicable laws, regulations including but not limited to Intellectual Property Rights, payment of statutory dues and taxes, claim of libel, defamation, violation of rights of privacy or publicity, loss of service by other subscribers and infringement of intellectual property or other rights. This clause shall survive the expiry or termination of this User Agreement.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingFifteen">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFifteen" aria-expanded="true" aria-controls="collapseFifteen">
-                                Termination
-                            </button>
-                        </h2>
-                        <div id="collapseFifteen" class="accordion-collapse collapse" aria-labelledby="headingFifteen" data-bs-parent="#termsAndConditionsAccordion">
-                            <div class="accordion-body">
-                                This User Agreement is effective unless and until terminated by either you or Ankuräḫ. You may terminate this User Agreement at any time, provided that you discontinue any further use of this Site. Ankuräḫ may terminate this User Agreement at any time and may do so immediately without notice, and accordingly deny you access to the Site, Such termination will be without any liability to Ankuräḫ. Upon any termination of the User Agreement by either you or Ankuräḫ, you must promptly destroy all materials downloaded or otherwise obtained from this Site, as well as all copies of such materials, whether made under the User Agreement or otherwise. Ankuräḫ’s right to any Comments shall survive any termination of this User Agreement. Any such termination of the User Agreement shall not cancel your obligation to pay for the product already ordered from the Website or affect any liability that may have arisen under the User Agreement.
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <ol>
+                    <li>
+                        This document is an electronic record in terms of Information Technology Act, 2000 and rules there under as applicable and the amended provisions pertaining to electronic records in various statutes as amended by the Information Technology Act, 2000. This electronic record is generated by a computer system and does not require any physical or digital signatures.
+                    </li>
+                    <li>
+                        This document is published in accordance with the provisions of Rule 3 (1) of the Information Technology (Intermediaries guidelines) Rules, 2011 that require publishing the rules and regulations, privacy policy and Terms of Use for access or usage of domain name ankurah.com ('Website'), including the related mobile site and mobile application (hereinafter referred to as 'Platform').
+                    </li>
+                    <li>
+                        The Platform is owned by ANKURAH, a company incorporated under the Companies Act, 1956 with its registered office at House No 332, Bhindem, Malcornem, Quepem 403 705.
+						(hereinafter referred to as “Platform Owner”, 'we', 'us', 'our').
+                    </li>
+                    <li>
+                        Your use of the Platform and services and tools are governed by the following terms and conditions (“Terms of Use”) as applicable to the Platform including the applicable policies which are incorporated herein by way of reference. If You transact on the Platform, You shall be subject to the policies that are applicable to the Platform for such transaction. By mere use of the Platform, You shall be contracting with the Platform Owner and these terms and conditions including the policies constitute Your binding obligations, with Platform Owner. These Terms of Use relate to your use of our website, goods (as applicable) or services (as applicable) (collectively, 'Services'). Any terms and conditions proposed by You which are in addition to or which conflict with these Terms of Use are expressly rejected by the Platform Owner and shall be of no force or effect. These Terms of Use can be modified at any time without assigning any reason. It is your responsibility to periodically review these Terms of Use to stay informed of updates.
+                    </li>
+                    <li>
+                        For the purpose of these Terms of Use, wherever the context so requires “you”, 'your' or “user” shall mean any natural or legal person who has agreed to become a user/buyer on the Platform.
+                    </li>
+                    <li>
+                        ACCESSING, BROWSING OR OTHERWISE USING THE PLATFORM INDICATES YOUR AGREEMENT TO ALL THE TERMS AND CONDITIONS UNDER THESE TERMS OF USE, SO PLEASE READ THE TERMS OF USE CAREFULLY BEFORE PROCEEDING.
+                    </li>
+                    <li>
+                        The use of Platform and/or availing of our Services is subject to the following Terms of Use:
+                        <ol type="a" class="mt-2">
+                            <li>
+                                To access and use the Services, you agree to provide true, accurate and complete information to us during and after registration, and you shall be responsible for all acts done through the use of your registered account on the Platform.
+                            </li>
+                            <li>
+                                Neither we nor any third parties provide any warranty or guarantee as to the accuracy, timeliness, performance, completeness or suitability of the information and materials offered on this website or through the Services, for any specific purpose. You acknowledge that such information and materials may contain inaccuracies or errors and we expressly exclude liability for any such inaccuracies or errors to the fullest extent permitted by law.
+                            </li>
+                            <li>
+                                Your use of our Services and the Platform is solely and entirely at your own risk and discretion for which we shall not be liable to you in any manner. You are required to independently assess and ensure that the Services meet your requirements.
+                            </li>
+                            <li>
+                                The contents of the Platform and the Services are proprietary to us and are licensed to us. You will not have any authority to claim any intellectual property rights, title, or interest in its contents. The contents includes and is not limited to the design, layout, look and graphics.
+                            </li>
+                            <li>
+                                You acknowledge that unauthorized use of the Platform and/or the Services may lead to action against you as per these Terms of Use and/or applicable laws.
+                            </li>
+                            <li>
+                                You agree to pay us the charges associated with availing the Services.
+                            </li>
+                            <li>
+                                You agree not to use the Platform and/ or Services for any purpose that is unlawful, illegal or forbidden by these Terms, or Indian or local laws that might apply to you.
+                            </li>
+                            <li>
+                                You agree and acknowledge that website and the Services may contain links to other third party websites. On accessing these links, you will be governed by the terms of use, privacy policy and such other policies of such third party websites. These links are provided for your convenience for provide further information.
+                            </li>
+                            <li>
+                                You understand that upon initiating a transaction for availing the Services you are entering into a legally binding and enforceable contract with the Platform Owner for the Services.
+                            </li>
+                            <li>
+                                You shall indemnify and hold harmless Platform Owner, its affiliates, group companies (as applicable) and their respective officers, directors, agents, and employees, from any claim or demand, or actions including reasonable attorney's fees, made by any third party or penalty imposed due to or arising out of Your breach of this Terms of Use, privacy Policy and other Policies, or Your violation of any law, rules or regulations or the rights (including infringement of intellectual property rights) of a third party.
+                            </li>
+                            <li>
+                                Notwithstanding anything contained in these Terms of Use, the parties shall not be liable for any failure to perform an obligation under these Terms if performance is prevented or delayed by a force majeure event.
+                            </li>
+                            <li>
+                                These Terms and any dispute or claim relating to it, or its enforceability, shall be governed by and construed in accordance with the laws of India.
+                            </li>
+                            <li>
+                                All disputes arising out of or in connection with these Terms shall be subject to the exclusive jurisdiction of the courts in Quepem and Goa.
+                            </li>
+                            <li>
+                                All concerns or communications relating to these Terms must be communicated to us using the contact information provided on this website.
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
             </div>
         </div>
     </div>
+    
 </div>
 <?php
 get_footer();
