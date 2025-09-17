@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<?php echo esc_html( preg_replace('/[0-9]{0,4}\s?gms?/','',$args['data']['product']->name) ); ?>
 		</h4>
 		<!-- <hr> -->
-		<div class="d-flex justify-content-between flex-wrap">
+		<div class="d-flex justify-content-between flex-wrap align-items-center">
 			<h5 class="secondaryFont fw-bold nbPrice text-nowrap">
 				<span>
 					<?php echo esc_html( $args['data']['product']->price ); ?>
