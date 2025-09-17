@@ -42,10 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</h5>
 				<?php 
 					if($args['data']['product']->stock_status == 'outofstock')
-						echo '<h6 class="numberFont text-secondary mb-0">Coming Soon</h6>';
-					else
-						echo do_shortcode('[jgm-preview-badge id="'.$args['data']['product']->id.'"]');
-
+						echo '<h6 class="numberFont text-secondary mb-0">Coming Soon</h6>'
 						// echo esc_html( $args['data']['product']->stock_status == 'outofstock' ? 'Out of Stock' : ($args['data']['product']->weight * 1000).'gms'  );
 				?>
 				<!-- <h6 class="numberFont">
