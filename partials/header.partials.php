@@ -5,9 +5,9 @@
    */
 ?>
 
-<nav id="nbHeader" class="container-fluid navbar">
+<nav id="nbHeader" class="container-fluid navbar position-relative">
   <div class="container h-100">
-      <div class="col-12  d-flex justify-content-between align-items-center">
+      <div class="col-12 d-flex justify-content-between align-items-center">
         <a id="nbLogo" href="/"  class="d-flex justify-content-center align-items-start" >
           <div class="d-flex flex-column justify-content-center">
             <h1 class="heroFont text-left">
@@ -78,8 +78,12 @@
           </div>
         </div>
       </div>
+      <button class="btn-custom position-absolute dark d-none d-md-block" style="right: 20px;top: 50%;transform: translateY(-70%);padding: 5px 13px !important;" ng-click="cartManagerCtrl.toggleCart()">
+        <i class="bi bi-basket"></i>
+      </button>
     </div>
   </div>
+  
 </nav>
 <section id="nbLgMenu">
   <a href="/ankurah/our-story">
@@ -93,5 +97,5 @@
     </a> -->
   <a id="nbShop" href="/shop">
     Shop Now
-  </a> 
+  </a>
 </section>

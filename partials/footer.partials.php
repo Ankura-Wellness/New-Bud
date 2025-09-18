@@ -118,7 +118,7 @@
 	<!-- {{ loadingManagerCtrl.loading() }} -->
 	<div id="loader" ng-class="loadingManagerCtrl.loading()">
 		<script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
-		<lottie-player  src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/src/animation/Zantye0.2.json" loop autoplay>
+		<lottie-player  src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/src/animation/Scene-1.json" loop autoplay>
 		</lottie-player>
 	</div>
 	<div ng-click="cartManagerCtrl.toggleCart()" id="nbBackground">
@@ -175,7 +175,7 @@
 			</div>
 		</div>
 		<div id="emptyCart" class="flex-column justify-content-center align-items-center h-100 p-3" ng-if="cartManagerCtrl.updated()">
-			<i class="fa-solid fa-basket-shopping text-danger" style="font-size: 45px;">
+			<i class="fa-solid fa-basket-shopping text-dark" style="font-size: 45px;">
 			</i>
 			<h3 class="primaryFont mt-4">
 				Your Cart is Empty
@@ -183,14 +183,14 @@
 			<?php
 				$path = explode('/',home_url(add_query_arg( array(), $wp->request)));
 				if( $path[sizeof($path)-1] == 'shop' )
-					print_r('<button ng-click="cartManagerCtrl.toggleCart()" class="btn btn-danger">Continue Shopping</button>');
+					print_r('<button ng-click="cartManagerCtrl.toggleCart()" class="btn-custom dark">Continue Shopping</button>');
 				else
-					print_r('<a href="/shop" class="btn btn-danger">Return to Shop</a>');
+					print_r('<a href="/shop" class="btn-custom dark">Return to Shop</a>');
 			?>
 		</div>
 		<div id="loadingCart" class="d-flex flex-column justify-content-center align-items-center h-100 p-3" ng-if="!cartManagerCtrl.updated()">
 			<script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
-			<lottie-player  src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/src/animation/Zantye0.2.json" loop autoplay>
+			<lottie-player  src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/src/animation/Scene-1.json" loop autoplay>
 			</lottie-player>
 			<h3 class="primaryFont mt-4">
 				Wait, Loading Cart
@@ -198,3 +198,6 @@
 		</div>
 	</div>
 </div>
+<button class="btn-custom position-fixed dark d-block d-md-none" style="right: 20px;bottom: 20px;padding: 5px 13px !important;" ng-click="cartManagerCtrl.toggleCart()">
+    <i class="bi bi-basket"></i>
+</button>

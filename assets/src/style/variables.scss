@@ -123,11 +123,9 @@ label.mandatory::after{
 
     .badge{
         @extend .primaryFont;
-        // color: $textBlack;
     }
 
     small{
-        // color: $textGrey;
         font-weight: 300;
     }
 }
