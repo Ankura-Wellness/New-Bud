@@ -23,7 +23,7 @@
         <script src="https://kit.fontawesome.com/8d5d6f5c26.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     </head>
-    <body <?php body_class();?> ng-app="zsi" ng-controller="page" ng-class="cartManagerCtrl.cartState() ? 'hideScroller' : ''">
+    <body <?php body_class();?> ng-app="nb" ng-controller="page" ng-class="cartManagerCtrl.cartState() ? 'hideScroller' : ''">
         <?php wp_body_open(); ?>
         <div id="page" class="site">
             <?php get_template_part('partials/header.partials');?>

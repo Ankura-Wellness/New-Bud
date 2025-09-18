@@ -6,11 +6,11 @@ import { checkout } from './njs/components/checkout.njs.js';
 import { cart } from './njs/components/cart.njs.js';
 import { page } from './njs/components/page.njs.js';
 
-export const zsi = angular.module('zsi', []);
-zsi.service('httpManager',httpManager);
-zsi.service('loadingManager',loadingManager);
-zsi.service('cartManager',cartManager);
+export const nb = angular.module('nb', []);
+nb.service('httpManager',httpManager);
+nb.service('loadingManager',loadingManager);
+nb.service('cartManager',cartManager);
 
-zsi.controller('page', page);
-zsi.controller('cart', cart);
-zsi.controller('checkout', checkout );
+nb.controller('page', page);
+nb.controller('cart', cart);
+nb.controller('checkout', checkout );

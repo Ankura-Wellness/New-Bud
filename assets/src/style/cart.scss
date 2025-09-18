@@ -1,5 +1,5 @@
-#zsiCartArea{
-    #zsiBackground{
+#nbCartArea{
+    #nbBackground{
         display: none;
         position: fixed;
         height: 100vh;
@@ -13,8 +13,7 @@
         width: 200px
     }
 
-
-    #zsiCart{
+    #nbCart{
         position:fixed;
         top:0px;
         width:400px;
@@ -34,7 +33,7 @@
                 // -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
                 .warningMessage{
-                    @extend .secondaryFont;
+                    @extend .primaryFont;
                     font-size: 14px;
                     font-weight: 700;
                 }
@@ -65,7 +64,7 @@
             }
         }
         
-        #zsiCartItemArea{
+        #nbCartItemArea{
             overflow-y: auto;
             flex-grow: 1;
     
@@ -91,7 +90,7 @@
                     }
         
                     h6{
-                        @extend .secondaryFont;
+                        @extend .primaryFont;
                         font-weight: 300;
                     }
                 }
@@ -139,19 +138,19 @@
     }
     
     @media screen and (max-width: 420px){
-        #zsiCart{
+        #nbCart{
             width: 100% !important;
         }
     }
 }
 
-#zsiCartArea{
+#nbCartArea{
     &.show{
-        #zsiBackground{
+        #nbBackground{
             display: block;
         }
 
-        #zsiCart{
+        #nbCart{
             transform: translateX(0) !important;
         }
     }

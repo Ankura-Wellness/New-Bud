@@ -1,3 +1,3 @@
 import './style/main.scss';
 
-export { zsi } from './scripts/zsi.njs.js';
+export { nb } from './scripts/nb.njs.js';

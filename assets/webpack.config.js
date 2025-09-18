@@ -10,7 +10,7 @@ module.exports = {
         path: path.resolve( __dirname, './dist' ),
         filename: 'main.js',
         assetModuleFilename: 'images/[name][ext]',
-        library: 'zsi'
+        library: 'nb'
     },
     module: {
         rules: [

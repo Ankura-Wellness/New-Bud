@@ -93,7 +93,7 @@
 			<div class="d-flex justify-content-center justify-content-md-end">
 				<!-- TO:DO Remove once all pages are finished -->
 				<?php
-					// $menus = zsi_get_menu('zsi_footer_menu');
+					// $menus = nb_get_menu('nb_footer_menu');
 
 					// if(sizeof($menus) > 0 ){} else {
 					// $menus = [
@@ -110,4 +110,91 @@
 			</div>
 		</div>
     </div>
+</div>
+
+<!-- ////////////////////////////////////////////////////// -->
+
+<div ng-controller="cart" id="nbCartArea" ng-class="cartManagerCtrl.cartState() ? 'show' : ''">
+	<!-- {{ loadingManagerCtrl.loading() }} -->
+	<div id="loader" ng-class="loadingManagerCtrl.loading()">
+		<script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
+		<lottie-player  src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/src/animation/Zantye0.2.json" loop autoplay>
+		</lottie-player>
+	</div>
+	<div ng-click="cartManagerCtrl.toggleCart()" id="nbBackground">
+	</div>
+	<div id="nbCart" ng-class="cartManagerCtrl.cart().length == 0 ? 'empty' : ''" >
+		<div id="nonEmptyCart" class="flex-column justify-content-between h-100" ng-if="cartManagerCtrl.updated()">
+			<h3 class="primaryFont text-center mt-3 p-3">
+				<i class="fa-solid fa-basket-shopping">
+				</i>
+				Your Cart ( {{ cartManagerCtrl.cart().length }} )
+				<p class="text-danger text-center warningMessage mt-3" ng-if="cartManagerCtrl.getCartItemsTotal() > 9">
+					Only 10 Items can be ordered in single Order.
+				</p>
+			</h3> 
+			<div id="nbCartItemArea" class="p-3">
+				<div class="cartItem" ng-repeat="cartItem in cartManagerCtrl.cart()" ng-if="cartItem.quantity > 0">
+					<img src="{{ cartItem.thumbnail }}">
+					<div>
+						<h5 class="px-1">
+							{{ cartItem.product_name }}
+						</h5>
+						<h6 class="text-danger">
+							₹{{ cartItem.price * cartItem.quantity }} ( ₹{{ cartItem.price }} x {{ cartItem.quantity }} )
+						</h6>
+					</div>
+					<div class="d-flex flex-vertical" role="group" aria-label="Vertical button group">
+						<button type="button" ng-disabled="cartManagerCtrl.getCartItemsTotal() > 9" class="btn btn-outline-danger addToCart" data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.addToCart(cartItem.id,false,true)">
+							<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid fa-plus">
+							</i>
+						</button>
+						<button type="button" class="btn btn-outline-danger removeFromCart" data-itemname="${ cartItem.product_name }" data-itemid="${ cartItem.id }" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.removeFromCart(cartItem.id,(cartItem.quantity - 1))">
+							<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid {{ cartItem.quantity == 1 ? 'fa-trash' : 'fa-minus'}}">
+							</i>
+						</button>
+					</div>
+				</div>				
+			</div>
+			<div class="d-flex flex-column p-3" id="nbCartFooterBox">
+				<h5 class="nbCartTotal primaryFont mt-3 text-center">
+					Subtotal : 
+					<span id="nbCartTotal" class="text-danger">
+						{{ cartManagerCtrl.cartSubTotal() }}
+					</span>
+				</h5>
+				<h6 class="secondaryFont text-center text-black-50 fw-light">
+					SHIPPING CHARGES CALCULATED <br> AT CHECKOUT
+				</h6>
+				<button class="btn btn-custom mt-3" ng-click="cartManagerCtrl.toggleCart()">
+					Continue Shopping
+				</button>
+				<a href="/checkout" class="btn btn-custom dark mt-3 mb-5 mb-sm-5 mb-xl-3 checkout">
+					Checkout
+				</a>
+			</div>
+		</div>
+		<div id="emptyCart" class="flex-column justify-content-center align-items-center h-100 p-3" ng-if="cartManagerCtrl.updated()">
+			<i class="fa-solid fa-basket-shopping text-danger" style="font-size: 45px;">
+			</i>
+			<h3 class="primaryFont mt-4">
+				Your Cart is Empty
+			</h3>
+			<?php
+				$path = explode('/',home_url(add_query_arg( array(), $wp->request)));
+				if( $path[sizeof($path)-1] == 'shop' )
+					print_r('<button ng-click="cartManagerCtrl.toggleCart()" class="btn btn-danger">Continue Shopping</button>');
+				else
+					print_r('<a href="/shop" class="btn btn-danger">Return to Shop</a>');
+			?>
+		</div>
+		<div id="loadingCart" class="d-flex flex-column justify-content-center align-items-center h-100 p-3" ng-if="!cartManagerCtrl.updated()">
+			<script src="https://cdn.lottielab.com/s/lottie-player@1.x/player-web.min.js"></script>
+			<lottie-player  src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/src/animation/Zantye0.2.json" loop autoplay>
+			</lottie-player>
+			<h3 class="primaryFont mt-4">
+				Wait, Loading Cart
+			</h3>
+		</div>
+	</div>
 </div>
