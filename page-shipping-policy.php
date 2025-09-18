@@ -10,7 +10,7 @@ get_header(null,['title'=>'']);
 <div id="sdPolicies">
     <div class="w-100 d-flex justify-content-center align-items-center px-0" style="color: #fff;height: 250px;background-blend-mode: overlay;background-color: rgba(103, 76, 20, 0.96);background-size: cover;">
         <h1 class="heroFont" style="font-size: 3rem;">
-            Shipping &amp; Policy
+            Shipping Policy
         </h1>
     </div>
     <div class="container my-5">
