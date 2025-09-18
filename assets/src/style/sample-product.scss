@@ -8,6 +8,10 @@
     a{
         text-decoration: none;
 
+        img{
+            margin-top: 20px;
+        }
+
         h4{
             @extend .primaryFont;
             font-weight: 700;

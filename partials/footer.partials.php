@@ -140,8 +140,8 @@
 						<h5 class="px-1">
 							{{ cartItem.product_name }}
 						</h5>
-						<h6 class="text-danger">
-							₹{{ cartItem.price * cartItem.quantity }} ( ₹{{ cartItem.price }} x {{ cartItem.quantity }} )
+						<h6>
+							₹{{ cartItem.price * cartItem.quantity }}  <small> ( ₹{{ cartItem.price }} x {{ cartItem.quantity }} ) </small>
 						</h6>
 					</div>
 					<div class="d-flex flex-vertical" role="group" aria-label="Vertical button group">
