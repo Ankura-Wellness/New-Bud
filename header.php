@@ -9,11 +9,10 @@
     <head>
         <meta charset="<?php bloginfo( 'charset' ); ?>" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>
-            <?php print_r(strlen($args['title']) > 0 ? $args['title'].' -' : '') ?> <?php  wp_title('|', true, 'right'); ?>
-        </title>
         <?php wp_head(); ?>
-        
+        <title>
+            <?php echo wp_get_document_title(); ?>
+        </title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">

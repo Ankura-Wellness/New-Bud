@@ -10,9 +10,7 @@
       <div class="col-12 d-flex justify-content-between align-items-center">
         <a id="nbLogo" href="/"  class="d-flex justify-content-center align-items-start" >
           <div class="d-flex flex-column justify-content-center">
-            <h1 class="heroFont text-left">
-              Ankuräh
-            </h1>
+            <img class="w-60" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/name.svg' ); ?>" alt="Ankuräḫ">
             <p class="taglineFont">
               ।। प्रकृति के साथ सामंजस्य ।।
             </p>
@@ -40,9 +38,7 @@
         </button>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title heroFont" id="offcanvasNavbarLabel">
-              Ankuräḫ
-            </h5>
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/name.svg' ); ?>" alt="Ankuräḫ">
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">

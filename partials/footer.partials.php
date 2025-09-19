@@ -12,9 +12,7 @@
 					<a href="/" id="nbLogo">
 						<img id="logo" height="100px" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/logo_sans_text.svg' ); ?>" alt="">
 						<div id="name">
-							<h1 class="heroFont">
-							Ankuräh
-							</h1>
+							<img class="w-50" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/name.svg' ); ?>" alt="Ankuräḫ">
 						</div>
 						<div id="tagline">
 							<p>
@@ -37,6 +35,7 @@
 							[ 'menu' => [ 'url' => '/privacy-policy' , 'title' => 'Privacy Policy' ]],
 							[ 'menu' => [ 'url' => '/refund-and-cancellation-policy' , 'title' => 'Refund & Cancellations Policy' ]],
 							[ 'menu' => [ 'url' => '/return-policy' , 'title' => 'Return Policy' ]],
+							[ 'menu' => [ 'url' => '/shipping-policy' , 'title' => 'Shipping Policy' ]],
 						];
 
 						foreach( $menus as $menu ){
