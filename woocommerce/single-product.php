@@ -152,7 +152,7 @@ get_header( null , [ 'title' => '' ] ); ?>
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-12 col-md-6 col-lg-4 d-flex align-item-center justify-content-center">
-				<?php print_r('<img class="mt-5 my-0 my-md-5 mt-lg-0" style="aspect-ratio: 1/1;" src="'.wp_get_attachment_url($gallery_image_ids[0], 'full').'"/>'); ?>
+				<?php print_r('<img class="mt-5 my-0 my-md-5 mt-lg-0" style="aspect-ratio: 1/1; border-radius: 0 0 10px 10px" src="'.wp_get_attachment_url($gallery_image_ids[0], 'full').'"/>'); ?>
 			</div>
 			<div class="col-12 col-md-6 d-flex align-items-center flex-column justify-content-center">
 				<h2 class="heroFont primaryText primaryText mt-5 mb-0" style="font-size: 45px;">
