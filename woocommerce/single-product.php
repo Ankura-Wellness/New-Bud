@@ -148,7 +148,23 @@ get_header( null , [ 'title' => '' ] ); ?>
 		</div>
 	</div>
 </section>
-
+<section id="nbProductDescription" class="container-fluid my-5">
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-12 col-md-6 col-lg-4 d-flex align-item-center justify-content-center">
+				<?php print_r('<img class="mt-5 my-0 my-md-5 mt-lg-0" style="aspect-ratio: 1/1;" src="'.wp_get_attachment_url($gallery_image_ids[0], 'full').'"/>'); ?>
+			</div>
+			<div class="col-12 col-md-6 d-flex align-items-center flex-column justify-content-center">
+				<h2 class="heroFont primaryText primaryText mt-5 mb-0" style="font-size: 45px;">
+					What's So Special Here?
+				</h2>
+				<p class="text-center text-md-start">
+					<?php print_r($product->description) ?>
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
 <?php get_template_part( 'partials/our-motive.partials' ); ?>
 <hr>
 <section class="container zsiCatalogue my-5">

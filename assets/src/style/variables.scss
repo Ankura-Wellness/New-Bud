@@ -75,6 +75,14 @@ label.mandatory::after{
     }
 }
 
+.primaryText{
+    color: $primaryColor;
+}
+
+.secondaryText{
+    color: $secondaryColor;
+}
+
 .btn-custom{
     @extend .heroFont;
     background-color: $secondaryColor !important;
