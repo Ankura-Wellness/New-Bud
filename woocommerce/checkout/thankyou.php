@@ -13,9 +13,13 @@ $order = new WC_Order($args['order']);
     <div class="row my-5">
         <div class="col-6 d-flex flex-column align-items-center">
             <img src="https://ankurah.com/wp-content/uploads/2025/09/front_label_top_it2_2.png" class="mb-3" style="height: 150px" alt="">
-            <h1 class="text-center heroFont text-uppercase fw-bold mb-4 primaryColor">
-				Order Confirmed
-			</h1>
+            <div class="d-flex align-items-center mb-4">
+                <img src="https://ankurah.com/wp-content/uploads/2025/09/accept.png" style="height: 50px">
+                <h1 class="text-center heroFont text-uppercase fw-bold primaryColor mb-0 ms-3">
+				    Order Confirmed
+			    </h1>
+            </div>
+            
             <h3 class="text-center" style="font-size:20px;">
                 Thank you , <?php echo esc_html($order->get_shipping_first_name()); ?>
             </h3>
@@ -78,6 +82,21 @@ $order = new WC_Order($args['order']);
                         </tr>        
                     </tbody>
                 </table>
+            </div>
+            <div class="col-12">
+                <div class="col-6">
+                    <h5 class="heroFont">
+                        Shipping address
+                    </h5>
+                    <p class="primaryFont">
+                        <?php print_r($order->get_shipping_first_name()); ?> <?php print_r($order->get_shipping_last_name()); ?> <br>
+                        <?php print_r($order->get_shipping_address_1()); ?> <br>
+                        <?php print_r($order->get_shipping_address_2()); ?> <br>
+                        <?php print_r($order->get_shipping_city()); ?>, <?php print_r($order->get_shipping_state()); ?><br>
+                        <?php print_r($order->get_shipping_postcode()); ?>
+                    </p>
+                </div>
+                <hr style="border: dashed 1px #000">
             </div>
         </div>
     </div>
