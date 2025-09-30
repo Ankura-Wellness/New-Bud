@@ -1,12 +1,38 @@
-#zsiThankyou{
+#bnCheckoutThankYou{
     
-    h1,h2,h3,h4,h5,h6{
-        @extend .primaryFont;
-        font-weight: 800;
+    h1{
+        font-size: 55px;
     }
 
-    p{
-        @extend .secondaryFont;
-        font-weight: 300;
+    th,td{
+        @extend .primaryFont;
+        font-size:  13px;
+    }
+
+    td,th{
+        border-style: dashed;
+        border-color: #000;
+    }
+
+    #nbInfoArea{
+        background-color: $secondaryColor;
+        padding: 20px;
+
+        .col-md-3{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            span{
+                @extend .heroFont;
+                font-size: 35px;
+                text-align: center;
+            }
+
+            &:nth-of-type(2){
+                border: 1px dashed grey;
+                border-width: 0 1px 0 1px;
+            }
+        }
     }
 }

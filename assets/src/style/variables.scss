@@ -40,6 +40,10 @@ button:disabled{
     font-optical-sizing: auto;
 }
 
+.primaryColor{
+    color: $primaryColor;
+}
+
 :root {
     color-scheme: only light;
 }
