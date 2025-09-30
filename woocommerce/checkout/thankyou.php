@@ -97,6 +97,9 @@ $order = new WC_Order($args['order']);
                     </p>
                 </div>
                 <hr style="border: dashed 1px #000">
+                <p>
+                    All rights reserved with ankurah wellness
+                </p>
             </div>
         </div>
     </div>
