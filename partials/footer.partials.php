@@ -113,6 +113,30 @@
 
 <!-- ////////////////////////////////////////////////////// -->
 
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="nbToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-config='{"delay":0, "title":123}'>
+    <div class="toast-header">
+      	<strong class="me-auto" id="nbToastTitle">
+			Failed
+		</strong>
+		<button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+		<span id="nbToastBody">
+
+		</span>
+		<div class="mt-2 pt-2 border-top">
+      		<a id="nbReportLink" href="" type="button" class="btn btn-custom btn-sm">
+				Report
+			</a>
+      		<button type="button" class="btn btn-custom btn-sm" data-bs-dismiss="toast">Close</button>
+    	</div>
+    </div>
+  </div>
+</div>
+
+<!-- ////////////////////////////////////////////////////// -->
+
 <div ng-controller="cart" id="nbCartArea" ng-class="cartManagerCtrl.cartState() ? 'show' : ''">
 	<!-- {{ loadingManagerCtrl.loading() }} -->
 	<div id="loader" ng-class="loadingManagerCtrl.loading()">

@@ -1,8 +1,9 @@
-export const httpManager = function ($http) {
+export const httpManager = function ($http,loadingManager,toastManager) {
    return { 
    		postRequester: function (requestMethod,parameters,secure,successCallback,errorCallback) {
             // var webUrl = process.env.NODE_ENV == 'production' ? 'https://zantyes.com/' : 'https://localhost/zantyes/';
 			var webUrl = 'https://ankurah.com/';
+			// var webUrl = 'http://localhost/ankurah/';
             let params_string = ''
             for(const parameter in parameters ){
                 params_string = params_string.length == 0 ? '' :  params_string + '&';
@@ -13,14 +14,16 @@ export const httpManager = function ($http) {
 
 			if( errorCallback == null){
 				errorCallback = function (response) {
+					toastManager.show('Failed to load cart','Try in sometime or refresh page and try again.');
 					switch( response.status){
 						case 401 :
-							var storage = window.localStorage;
+							// var storage = window.localStorage;
+							
 							// storage.removeItem('token');
 							// $state.go('login',{});
 							break;
 					}
-					// loadManager.hideWaiter();
+					loadingManager.hide();
 				};
 			}
     		$http({method: 'POST',url: webUrl+requestMethod,data: params_string,headers: headers}).then( successCallback, errorCallback );

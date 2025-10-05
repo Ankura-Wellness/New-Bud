@@ -4,6 +4,12 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 	var shouldShowCart = false;
 	var updated = false;
 
+	function getCartItemsError(error) {
+		updated = true;
+		loadingManager.hide();
+		// alert('Some error occured. Please try again later.');
+	}
+
 	function getCartItemsCallback(response) {
 		updated = true;
 		loadingManager.hide();
@@ -16,7 +22,7 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 	}
 
 	function getCart(){
-		httpManager.postRequester('wp-admin/admin-ajax.php',{ action:'get_cart_items' },true,getCartItemsCallback);
+		httpManager.postRequester('wp-admin/admin-ajax.php',{ action:'get_cart_items' },true,getCartItemsCallback,getCartItemsError);
 	}
 
 	function getCartItemsTotal(){

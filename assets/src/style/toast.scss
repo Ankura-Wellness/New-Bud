@@ -1,0 +1,20 @@
+#nbToast{
+    
+    background-color: $heroColor;
+    border-left: 15px solid $primaryColor;
+
+    .toast-header{
+        background-color: darken($heroColor, 10%);
+
+        strong{
+            @extend .heroFont;
+            color: $primaryColor;
+            font-size: 25px;
+        }
+    }
+
+    .toast-body{
+        @extend .primaryFont;
+        font-size: 13px;
+    }
+}
