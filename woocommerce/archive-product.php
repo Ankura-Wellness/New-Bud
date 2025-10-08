@@ -14,7 +14,7 @@ get_header(null,[ 'title' => '' ] );
 </section> -->
 <section class="container zsiCatalogue my-5" ng-controller="cart">
 	<?php
-		$categories = [[ 'name' => ['Dried'] , 'title' => 'Dried Products' , 'subtitle' => '' ]];
+		$categories = [[ 'name' => ['Dried'] , 'title' => 'Our Products' , 'subtitle' => '' ]];
 
 		foreach($categories as $category){
 			// if(sizeof($products) > 0){

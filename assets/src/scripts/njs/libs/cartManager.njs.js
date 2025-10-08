@@ -7,7 +7,7 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 	function getCartItemsError(error) {
 		updated = true;
 		loadingManager.hide();
-		// alert('Some error occured. Please try again later.');
+		alert('Some error occured. Please try again later.');
 	}
 
 	function getCartItemsCallback(response) {
