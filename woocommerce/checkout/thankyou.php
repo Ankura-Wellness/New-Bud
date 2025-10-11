@@ -14,7 +14,6 @@ $order = new WC_Order($args['order']);
         <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center">
             <img src="https://ankurah.com/wp-content/uploads/2025/09/front_label_top_it2_2.png" class="mb-3" style="height: 150px" alt="">
             <div class="d-flex align-items-center mb-4">
-                <img src="https://ankurah.com/wp-content/uploads/2025/09/accept.png" style="height: 50px">
                 <h1 class="text-center heroFont text-uppercase fw-bold primaryColor mb-0 ms-3">
 				    Order Confirmed
 			    </h1>
@@ -30,13 +29,13 @@ $order = new WC_Order($args['order']);
                 </strong>.
 			</p>
         </div>
-        <div class="col-12 col-md-6 row justify-content-center" id="nbInfoArea">
+        <div class="col-12 col-md-6 row justify-content-center" id="nbInfoArea" style="border-image: url(<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/woocommerce/thankyou/border.png' ); ?>) round 20%">
             <div class="col-md-3 primaryFont">
                 <span class="fw-bold tex">
-                    # Order
+                    Order
                 </span> <br>
                 <p>
-                    <?php print_r($order->id); ?>
+                    # <?php print_r($order->id); ?>
                 </p>
             </div>
             <div class="col-md-3 primaryFont">
@@ -55,7 +54,7 @@ $order = new WC_Order($args['order']);
                     <?php print_r($order->total); ?>
                 </p>
             </div>
-            <div class="col-8 mt-3">
+            <div class="col-12 col-md-8 my-3">
                 <table class="table">
                     <thead>
                         <tr>
@@ -88,10 +87,10 @@ $order = new WC_Order($args['order']);
             </div>
             <div class="col-12 row justify-content-center" id="nbAddress">
                 <div class="col-6">
-                    <h5 class="heroFont">
+                    <h5 class="heroFont text-center">
                         Shipping address
                     </h5>
-                    <p class="primaryFont">
+                    <p class="primaryFont text-center">
                         <span class="fw-bold fs-6 fst-italic">
                             <?php print_r($order->get_shipping_first_name()); ?> <?php print_r($order->get_shipping_last_name()); ?>
                         </span> <br>
@@ -103,10 +102,10 @@ $order = new WC_Order($args['order']);
                     </p>
                 </div>
                 <div class="col-6">
-                    <h5 class="heroFont">
+                    <h5 class="heroFont text-center">
                         Billing address
                     </h5>
-                    <p class="primaryFont">
+                    <p class="primaryFont text-center">
                         <span class="fw-bold fs-6 fst-italic">
                             <?php print_r($order->get_billing_first_name()); ?> <?php print_r($order->get_billing_last_name()); ?> <br>
                         </span>

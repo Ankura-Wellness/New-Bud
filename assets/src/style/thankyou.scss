@@ -16,7 +16,10 @@
 
     #nbInfoArea{
         background-color: $secondaryColor;
-        padding: 20px;
+        background-image: url(http://ankurah.com/wp-content/uploads/2025/09/pattern-9d9863.svg);
+        border: 15px solid transparent;
+        padding: 15px;
+        border-width: 10px 0 10px 0;
 
         .col-md-3{
             display: flex;
