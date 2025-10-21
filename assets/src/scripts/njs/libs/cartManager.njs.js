@@ -7,7 +7,7 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 	function getCartItemsError(error) {
 		updated = true;
 		loadingManager.hide();
-		alert('Some error occured. Please try again later.');
+		// alert('Some error occured. Please try again later.');
 	}
 
 	function getCartItemsCallback(response) {
@@ -38,15 +38,17 @@ export const cartManager =  function ( httpManager,loadingManager ) {
    	return { 
 		cart: function(){
 			return cart;
-		},
-		setCart: function (newCart) {
+		},setCart: function (newCart) {
 			cart = newCart;
-		},
-		addToCart: function (id,openCart) {
+		},applyCoupon: function () {	
 			loadingManager.show();
-			shouldShowCart = true;
+			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'apply_coupon' },true,getCartItemsCallback);
+		},addToCart: function (id,openCart) {	
+			loadingManager.show();
+			shouldShowCart = openCart;
 			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'add_cart_items' , id : id },true,getCartItemsCallback);
-		},removeFromCart: function (id,quantity) {
+		},removeFromCart: function (id,quantity,$event) {
+			$event.stopPropagation();
     		loadingManager.show();
 			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'remove_cart_items' , id : id , quantity : quantity },true,getCartItemsCallback);
 		},toggleCart: function () {

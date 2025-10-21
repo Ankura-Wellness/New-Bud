@@ -1,0 +1,81 @@
+#nbBasketPage{
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .cartItem{
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        color: #000;
+        padding: 10px;
+        border-radius: 5px;
+
+        &:hover{
+            background-color: $lightGray;
+        }
+
+        img{
+            width: 20% !important;
+        }
+
+        h5{
+            font-weight: 800;
+        }
+
+        button{
+            line-height: 10px;
+            border-width: 3px;
+            height: 35px;
+            width: 35px;
+            padding: 0 !important;
+            margin-top: 0 !important;
+            border-width: 0;
+
+            &:nth-of-type(1){
+                border-radius: 4px 4px 0 0;
+                border-bottom-width: 1.5px;
+                border-color: $primaryColor;
+            }
+
+            &:nth-of-type(2){
+                border-radius: 0 0 4px 4px;
+                border-top-width: 1.5px;
+                border-color: $primaryColor;
+            }
+        }
+    }
+
+    #nbInfoArea{
+        background-color: $secondaryColor;
+        background-image: url(http://ankurah.com/wp-content/uploads/2025/09/pattern-9d9863.svg);
+        border: 15px solid transparent;
+        padding: 15px;
+        border-width: 10px 0 10px 0;
+
+        th,td{
+            border-color: $primaryColor;
+        }
+
+        th{
+            @extend .primaryFont;
+            font-size: 14px
+        }
+
+        td{
+            @extend .currencyFont;
+            font-size: 18px;
+        }
+
+        tr:last-of-type{
+            th,td{
+                font-size: 21px;
+            }
+        }
+    }
+
+    #nbCouponBox{
+        background-color: $lightGray;
+        margin-top: 30px;
+        border: 0;
+    }
+}

@@ -148,7 +148,7 @@
 	</div>
 	<div id="nbCart" ng-class="cartManagerCtrl.cart().length == 0 ? 'empty' : ''" >
 		<div id="nonEmptyCart" class="flex-column justify-content-between h-100" ng-if="cartManagerCtrl.updated()">
-			<h3 class="primaryFont text-center mt-3 p-3">
+			<h3 class="heroFont text-center mt-3 p-3 fw-bold">
 				<i class="fa-solid fa-basket-shopping">
 				</i>
 				Your Cart ( {{ cartManagerCtrl.cart().length }} )
@@ -168,11 +168,11 @@
 						</h6>
 					</div>
 					<div class="d-flex flex-vertical" role="group" aria-label="Vertical button group">
-						<button type="button" ng-disabled="cartManagerCtrl.getCartItemsTotal() > 9" class="btn btn-outline-danger addToCart" data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.addToCart(cartItem.id,false,true)">
+						<button type="button" ng-disabled="cartManagerCtrl.getCartItemsTotal() > 9" class="btn btn-custom addToCart" data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.addToCart(cartItem.id,false,true)">
 							<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid fa-plus">
 							</i>
 						</button>
-						<button type="button" class="btn btn-outline-danger removeFromCart" data-itemname="${ cartItem.product_name }" data-itemid="${ cartItem.id }" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.removeFromCart(cartItem.id,(cartItem.quantity - 1))">
+						<button type="button" class="btn btn-custom removeFromCart" data-itemname="${ cartItem.product_name }" data-itemid="${ cartItem.id }" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.removeFromCart(cartItem.id,(cartItem.quantity - 1))">
 							<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid {{ cartItem.quantity == 1 ? 'fa-trash' : 'fa-minus'}}">
 							</i>
 						</button>

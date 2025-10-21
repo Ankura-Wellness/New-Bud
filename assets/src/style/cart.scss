@@ -94,10 +94,11 @@
                     h6{
                         @extend .primaryFont;
                         font-weight: 300;
-                        color: $secondaryColor;
+                        color: $primaryColor;
                         font-weight: 800;
 
                         small{
+                            color: $secondaryColor;
                             font-weight: 400;
                         }
                     }
@@ -108,16 +109,20 @@
                     border-width: 3px;
                     height: 35px;
                     width: 35px;
-                    padding: 0;
+                    padding: 0 !important;
+                    margin-top: 0 !important;
+                    border-width: 0;
     
                     &:nth-of-type(1){
                         border-radius: 4px 4px 0 0;
                         border-bottom-width: 1.5px;
+                        border-color: $primaryColor;
                     }
     
                     &:nth-of-type(2){
                         border-radius: 0 0 4px 4px;
                         border-top-width: 1.5px;
+                        border-color: $primaryColor;
                     }
                 }
             }
@@ -131,15 +136,13 @@
                 font-weight: 800;
             
                 span{
-                    color: $secondaryColor !important;
+                    color: $primaryColor !important;
 
                     &::before{
                         content: "₹";
                     }
                 }
             }
-
-            
         }
     }
 

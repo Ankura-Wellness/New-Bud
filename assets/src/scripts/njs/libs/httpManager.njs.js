@@ -2,8 +2,8 @@ export const httpManager = function ($http,loadingManager,toastManager) {
    return { 
    		postRequester: function (requestMethod,parameters,secure,successCallback,errorCallback) {
             // var webUrl = process.env.NODE_ENV == 'production' ? 'https://ankurah.com/' : 'https://localhost/ankurah/';
-			var webUrl = 'https://ankurah.com/';
-			// var webUrl = 'http://localhost/ankurah/';
+			// var webUrl = 'https://ankurah.com/';
+			var webUrl = 'http://localhost/ankurah/';
             let params_string = ''
             for(const parameter in parameters ){
                 params_string = params_string.length == 0 ? '' :  params_string + '&';
@@ -13,16 +13,9 @@ export const httpManager = function ($http,loadingManager,toastManager) {
 			var headers = {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','accept': 'application/json, text/javascript, */*; q=0.01'};
 
 			if( errorCallback == null){
-				errorCallback = function (response) {
-					toastManager.show('Failed to load cart','Try in sometime or refresh page and try again.');
-					switch( response.status){
-						case 401 :
-							// var storage = window.localStorage;
-							
-							// storage.removeItem('token');
-							// $state.go('login',{});
-							break;
-					}
+				errorCallback = error => {
+					console.log('Error',error);
+					toastManager.show('Failed to load cart','Try in sometime or refresh page and try again.',error);
 					loadingManager.hide();
 				};
 			}

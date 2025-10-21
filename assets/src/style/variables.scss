@@ -44,6 +44,21 @@ button:disabled{
     color: $primaryColor;
 }
 
+.currencyFont{
+    @extend .taglineFont;
+    color: $primaryColor;
+    font-weight: 800;
+    font-size: 18px;
+
+    small{
+        font-weight: 500;
+    }
+
+    &::before{
+        content: '₹';
+    }
+}
+
 :root {
     color-scheme: only light;
 }
