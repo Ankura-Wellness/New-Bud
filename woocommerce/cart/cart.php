@@ -24,8 +24,8 @@ print_r($product);
 
 get_header( null , [ 'title' => '' ] ); ?>
 
-<section id="nbBasketPage" class="container">
-	<div class="row ">
+<section id="nbBasketPage" class="container placeholderChildren">
+	<div class="row" ng-if="!cartManagerCtrl.updated() || ( cartManagerCtrl.getCartItemsTotal() > 0)">
 		<div class="col-12">
 			<h1 class="heroFont">
 				Cart
@@ -61,8 +61,8 @@ get_header( null , [ 'title' => '' ] ); ?>
 						Have a coupon?
 					</h2>
 					<div>
-						<input type="text">
-						<button ng-click="cartManagerCtrl.applyCoupon()">
+						<input type="text" ng-model="couponCode">
+						<button class="btn btn-custom ml-2 btn-sm" ng-click="cartManagerCtrl.applyCoupon(couponCode)">
 							Apply Coupon
 						</button>
 					</div>
@@ -75,32 +75,63 @@ get_header( null , [ 'title' => '' ] ); ?>
 					<table class="table">
 						<tbody>
 							<tr>
-								<th scope="row">    
-									Subtotal:
+								<th scope="row">
+									<p>
+										Subtotal:
+									</p>
+									
 								</th>
 								<td>
-									{{ cartManagerCtrl.cartSubTotal() }}
+									<p>
+										{{ cartManagerCtrl.cartSubTotal() }}
+									</p>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">    
-									Tax
+									<p>
+										Tax
+									</p>
 								</th>
 								<td>
-									0	
+									<p>
+										0
+									</p>
+								</td>
+							</tr>
+
+							<tr ng-if="cartManagerCtrl.discount().length > 0">
+								<th scope="row">
+									<p>
+										<i class="bi bi-tags-fill">
+										</i>
+										{{  cartManagerCtrl.discount()[0].code }}
+										<small class="fw-light">
+											(Coupon)
+										</small>
+									</p>
+								</th>
+								<td>
+									<p>
+										-{{ cartManagerCtrl.discount()[0].amount_raw }}
+									</p>
 								</td>
 							</tr>
 							<tr>
 								<th scope="row">
-									Total
+									<p>
+										Total
+									</p>
 								</th>
 								<td>
-									{{ cartManagerCtrl.cartSubTotal() }}
+									<p>
+										{{ cartManagerCtrl.cartTotal() }}
+									</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<a class="btn btn-custom dark w-100" href="/ankurah/checkout">
+					<a class="btn btn-custom dark w-100 specialPlaceholder" href="/ankurah/checkout">
 						Checkout
 					</a>
 				</div>
@@ -111,7 +142,18 @@ get_header( null , [ 'title' => '' ] ); ?>
 				</div>
 			</div>
         </div>
-	</div>	
+	</div>
+	<div class="d-flex flex-column align-items-center my-5" ng-if="cartManagerCtrl.updated() && (cartManagerCtrl.getCartItemsTotal() == 0)">
+		<h2 class="heroFont text-center">
+			Cart Empty
+		</h2>
+		<div>
+			<a class="btn btn-custom" href="/shop">
+				Go To Shop
+			</a>
+		</div>
+		
+	</div>
 </section>
 
 <?php

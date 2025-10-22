@@ -1,5 +1,6 @@
 export const cartManager =  function ( httpManager,loadingManager ) {
 	var cart = [];
+	var discount = [];
 	var showCart = false;
 	var shouldShowCart = false;
 	var updated = false;
@@ -18,7 +19,9 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 			showCart = true;
 		}
 		cart = response.data.cart.filter( item => { return item.quantity > 0 } ) ;
+		discount = response.data.discount ;
 		localStorage.setItem('items',JSON.stringify(cart));
+		jQuery('#nbBasketPage').removeClass('placeholderChildren');
 	}
 
 	function getCart(){
@@ -38,11 +41,13 @@ export const cartManager =  function ( httpManager,loadingManager ) {
    	return { 
 		cart: function(){
 			return cart;
+		},discount: function(){
+			return discount;
 		},setCart: function (newCart) {
 			cart = newCart;
-		},applyCoupon: function () {	
+		},applyCoupon: function (couponCode) {	
 			loadingManager.show();
-			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'apply_coupon' },true,getCartItemsCallback);
+			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'apply_coupon' , coupon_code : couponCode },true,getCartItemsCallback);
 		},addToCart: function (id,openCart) {	
 			loadingManager.show();
 			shouldShowCart = openCart;
@@ -61,6 +66,15 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 				cartSubTotal =  cartSubTotal + (item.quantity * item.price);
 			});
 			return cartSubTotal;
+		},cartTotal:  function () {
+			var cartTotal = 0;
+			cart.forEach(item => {
+				cartTotal =  cartTotal + (item.quantity * item.price);
+			});
+			discount.forEach(item => {
+				cartTotal =  cartTotal - item.amount_raw;
+			});
+			return cartTotal;
 		},getCart: function () {
 			getCart();
 		},getCartItemsTotal: function() {			

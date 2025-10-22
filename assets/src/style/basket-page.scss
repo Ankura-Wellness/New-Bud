@@ -54,6 +54,7 @@
 
         th,td{
             border-color: $primaryColor;
+            white-space: nowrap;
         }
 
         th{
@@ -62,8 +63,11 @@
         }
 
         td{
-            @extend .currencyFont;
             font-size: 18px;
+
+            p{
+                @extend .currencyFont;
+            }
         }
 
         tr:last-of-type{

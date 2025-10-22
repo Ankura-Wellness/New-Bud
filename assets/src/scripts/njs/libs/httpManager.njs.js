@@ -31,27 +31,3 @@ export const httpManager = function ($http,loadingManager,toastManager) {
 		}
    };
 };
-
-// ,getRequester: function (requestMethod,parameters,secure,successCallback,errorCallback) {
-// 	var webUrl = 'https://api.dctp.club/web/';
-// 	var storage = window.localStorage;
-// 	var headers = {'Content-Type': 'application/json'};
-	
-// 	if(secure){
-// 		headers = {'Content-Type': 'application/json','Authorization': 'Bearer ' + storage.getItem('token')};
-// 	}			
-// 	if( errorCallback == null){
-// 		errorCallback = function (response) {
-// 			switch( response.status){
-// 				case 401 :
-// 					var storage = window.localStorage;
-// 					storage.removeItem('token');
-// 					$state.go('login',{});
-// 					break;
-// 			}
-// 			loadManager.hideWaiter();
-// 		};
-// 	}
-
-// 	$http({method: 'GET',url: webUrl+requestMethod,data: parameters,headers: headers}).then( successCallback, errorCallback );
-// },
