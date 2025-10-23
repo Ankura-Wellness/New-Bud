@@ -8,7 +8,6 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 	function getCartItemsError(error) {
 		updated = true;
 		loadingManager.hide();
-		// alert('Some error occured. Please try again later.');
 	}
 
 	function getCartItemsCallback(response) {
@@ -48,6 +47,9 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 		},applyCoupon: function (couponCode) {	
 			loadingManager.show();
 			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'apply_coupon' , coupon_code : couponCode },true,getCartItemsCallback);
+		},removeCoupon: function (couponCode) {	
+			loadingManager.show();
+			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'remove_coupon' , coupon_code : couponCode },true,getCartItemsCallback);
 		},addToCart: function (id,openCart) {	
 			loadingManager.show();
 			shouldShowCart = openCart;

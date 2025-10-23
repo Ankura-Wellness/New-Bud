@@ -12,31 +12,23 @@ add_action('wp_ajax_nopriv_get_cart_items', 'zsiGetCartItems');
 add_action('wp_ajax_apply_coupon', 'zsiApplyCoupon');
 add_action('wp_ajax_nopriv_apply_coupon', 'zsiApplyCoupon');
 
+add_action('wp_ajax_remove_coupon', 'zsiRemoveCoupon');
+add_action('wp_ajax_nopriv_remove_coupon', 'zsiRemoveCoupon');
+
 function zsiApplyCoupon() {
-		// if ( empty( $_POST['coupon'] ) ) {
-		// 	wp_send_json( [ 'status' => 'error', 'message' => 'Coupon code missing' ] );
-		// }
+	WC()->cart->apply_coupon( $_POST['coupon_code'] );
+	wp_send_json(zsiFetchCart());
+}
 
-		// $coupon = sanitize_text_field( wp_unslash( $_POST['coupon'] ) );
-
-		// Try to apply the coupon
-	WC()->cart->apply_coupon( 'test1' );
-	// WC()->cart->calculate_totals();
-
-		// Verify application
-		// if ( WC()->cart->has_discount( $coupon ) ) {
-		// 	wp_send_json( [ 'status' => 'success', 'message' => 'Coupon applied', 'cart' => zsiFetchCart() ] );
-		// } else {
-		// 	wp_send_json( [ 'status' => 'error', 'message' => 'Invalid or unusable coupon', 'cart' => zsiFetchCart() ] );
-		// }
+function zsiRemoveCoupon() {
+	WC()->cart->remove_coupon( $_POST['coupon_code'] );
 	wp_send_json(zsiFetchCart());
 }
 
 function zsiAddCartItems() {
-	if(isset($_POST['id'])){
+	if(isset($_POST['id']))
 		WC()->cart->add_to_cart($_POST['id']);
-	} 
-		wp_send_json(zsiFetchCart());	
+	wp_send_json(zsiFetchCart());	
 }
 
 function zsiRemoveCartItems() {

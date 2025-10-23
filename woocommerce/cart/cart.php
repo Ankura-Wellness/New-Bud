@@ -32,37 +32,41 @@ get_header( null , [ 'title' => '' ] ); ?>
 			</h1>
 		</div>
 		<div class="col-12 col-md-6 mb-5" >
-			<a href="/product/{{ cartItem.url }}" class="cartItem" ng-repeat="cartItem in cartManagerCtrl.cart()" ng-if="cartItem.quantity > 0">
-				<img src="{{ cartItem.thumbnail }}">
-				<div class="d-flex flex-grow-1 ms-3 justify-content-between align-items-center">
-					<div >
-						<h5 class="px-1">
-							{{ cartItem.product_name }}
-						</h5>
-						<h6 class="currencyFont">
-							{{ cartItem.price * cartItem.quantity }}  <small> ( ₹{{ cartItem.price }} x {{ cartItem.quantity }} ) </small>
-						</h6>
-					</div>
-					<div class="d-flex flex-column" role="group">
-						<button type="button" ng-disabled="cartManagerCtrl.getCartItemsTotal() > 9" class="btn btn-custom addToCart p-1" data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.addToCart(cartItem.id,false,$event);$event.stopPropagation();$event.preventDefault()">
-							<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid fa-plus">
-							</i>
-						</button>
-						<button type="button" class="btn btn-custom removeFromCart mt-0" data-itemname="${ cartItem.product_name }" data-itemid="${ cartItem.id }" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.removeFromCart(cartItem.id,(cartItem.quantity - 1),$event);$event.stopPropagation();$event.preventDefault()">
-							<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid {{ cartItem.quantity == 1 ? 'fa-trash' : 'fa-minus'}}">
-							</i>
-						</button>
-					</div>
+			<div class="card" id="nbCartItemBox">
+				<div class="card-body">
+					<a href="/product/{{ cartItem.url }}" class="cartItem" ng-repeat="cartItem in cartManagerCtrl.cart()" ng-if="cartItem.quantity > 0">
+						<img class="specialPlaceholder" src="{{ cartItem.thumbnail }}">
+						<div class="d-flex flex-grow-1 ms-3 justify-content-between align-items-center">
+							<div >
+								<h5 class="px-1">
+									{{ cartItem.product_name }}
+								</h5>
+								<h5 class="currencyFont">
+									{{ cartItem.price * cartItem.quantity }}  <small> ( ₹{{ cartItem.price }} x {{ cartItem.quantity }} ) </small>
+								</h5>
+							</div>
+							<div class="d-flex flex-column" role="group">
+								<button type="button" ng-disabled="cartManagerCtrl.getCartItemsTotal() > 9" class="btn btn-custom addToCart p-1" data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.addToCart(cartItem.id,false,$event);$event.stopPropagation();$event.preventDefault()">
+									<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="{{ cartItem.quantity }}" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid fa-plus">
+									</i>
+								</button>
+								<button type="button" class="btn btn-custom removeFromCart mt-0" data-itemname="${ cartItem.product_name }" data-itemid="${ cartItem.id }" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" ng-click="cartManagerCtrl.removeFromCart(cartItem.id,(cartItem.quantity - 1),$event);$event.stopPropagation();$event.preventDefault()">
+									<i data-itemname="{{ cartItem.product_name }}" data-itemid="{{ cartItem.id }}" data-itemquantity="1" data-itemprice="{{ cartItem.price }}" data-itemcategory1="{{ cartItem.category }}" class="fa-solid {{ cartItem.quantity == 1 ? 'fa-trash' : 'fa-minus'}}">
+									</i>
+								</button>
+							</div>
+						</div>
+					</a>
 				</div>
-			</a>
-			<div class="card" id="nbCouponBox">
+			</div>
+			<div class="card" id="nbCouponBox" ng-if="cartManagerCtrl.discount().length == 0">
 				<div class="card-body">
 					<h2 class="heroFont">
 						Have a coupon?
 					</h2>
-					<div>
-						<input type="text" ng-model="couponCode">
-						<button class="btn btn-custom ml-2 btn-sm" ng-click="cartManagerCtrl.applyCoupon(couponCode)">
+					<div class="d-flex">
+						<input type="text" ng-model="couponCode" placeholder="Enter Coupon Code..." class="specialPlaceholder">
+						<button class="btn btn-custom mt-0 ms-2 btn-sm specialPlaceholder" ng-click="cartManagerCtrl.applyCoupon(couponCode)">
 							Apply Coupon
 						</button>
 					</div>
@@ -99,17 +103,19 @@ get_header( null , [ 'title' => '' ] ); ?>
 									</p>
 								</td>
 							</tr>
-
-							<tr ng-if="cartManagerCtrl.discount().length > 0">
+							<tr ng-repeat="discount in cartManagerCtrl.discount()">
 								<th scope="row">
-									<p>
+									<p class="mb-1">
 										<i class="bi bi-tags-fill">
 										</i>
-										{{  cartManagerCtrl.discount()[0].code }}
+										{{  discount.code }}
 										<small class="fw-light">
 											(Coupon)
 										</small>
 									</p>
+									<button class="btn" ng-click="cartManagerCtrl.removeCoupon(discount.code)">
+										Remove
+									</button>
 								</th>
 								<td>
 									<p>
@@ -124,7 +130,7 @@ get_header( null , [ 'title' => '' ] ); ?>
 									</p>
 								</th>
 								<td>
-									<p>
+									<p style="font-size: 30px;">
 										{{ cartManagerCtrl.cartTotal() }}
 									</p>
 								</td>
@@ -157,4 +163,4 @@ get_header( null , [ 'title' => '' ] ); ?>
 </section>
 
 <?php
-get_footer( 'shop' );
+get_footer( 'cart' );
