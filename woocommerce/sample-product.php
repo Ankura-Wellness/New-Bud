@@ -19,6 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 // <!-- <img src=" <?php wp_get_attachment_url($args['data']['product']->id,'thumbnail') get_post_permalink($args['data']['product']->id)  '..'" alt="">
+// print_r($args['data']['product'])
 ?>
 
 <!-- <div class="col-6 col-sm-4 col-md-3 product"> -->
@@ -33,6 +34,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<h4 class="mt-3 text-dark">
 			<?php echo esc_html( preg_replace('/[0-9]{0,4}\s?gms?/','',$args['data']['product']->name) ); ?>
 		</h4>
+		<h6>
+			<?php echo esc_html( (float)$args['data']['product']->weight*1000 ); ?>gms
+		</h6>
 		<!-- <hr> -->
 		<div class="d-flex justify-content-between flex-wrap align-items-center">
 			<h5 class="secondaryFont fw-bold nbPrice text-nowrap">

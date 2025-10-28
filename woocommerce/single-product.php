@@ -66,10 +66,16 @@ get_header( null , [ 'title' => '' ] ); ?>
 			<h1 class="primaryFont fw-bold">
 				<?php print_r($product->name) ?>
 			</h1>
-			<?php
-				if($product->stock_status == 'outofstock')
-					echo '<h6 class="numberFont text-secondary">Coming Soon</h6>';
-			?>
+			<h6>
+				<?php echo esc_html( (float)$product->weight*1000 ); ?>gms
+				<span class="text-secondary">
+					<?php
+					if($product->stock_status == 'outofstock')
+						echo 'Coming Soon';
+					?>
+				</span>
+			</h6>
+			
 			<h4 class="nbPrice mb-3">
 				<span>
 					<?php  print_r($product->price) ?>

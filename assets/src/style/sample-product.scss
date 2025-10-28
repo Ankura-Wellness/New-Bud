@@ -18,12 +18,16 @@
             color: $primaryColor;
             text-decoration: none !important;
             height: 64px;
-            margin-bottom: 18px;
+            margin-bottom: 0;
 
             &:hover{
                 text-decoration: underline;
                 color: darken($primaryColor, 10%);
             }
+        }
+
+        h6{
+            color: gray;
         }
     }
 }

@@ -12,7 +12,7 @@ function secondInning_enqueue_scripts(){
 	// wp_enqueue_script( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css' );
 	// wp_enqueue_style( 'bootstrap-css' );
 	wp_enqueue_script( 'angularjs',get_template_directory_uri().'/assets/node_modules/angular/angular.min.js' );
-	wp_enqueue_script( 'webpack',get_template_directory_uri().'/assets/dist/main.js' , [] , '8.4.3' );
+	wp_enqueue_script( 'webpack',get_template_directory_uri().'/assets/dist/main.js' , [] , '8.5.0' );
 	wp_enqueue_script( 'lightslider',get_template_directory_uri().'/assets/lib/lightslider.min.js' , [] , '8.1.4' );
 	wp_enqueue_script( 'lightgallery',get_template_directory_uri().'/assets/lib/lightgallery.js' );
 
@@ -57,10 +57,8 @@ function zsi_get_menu($location){
 
 function zsi_process_payment(){
 	try {
-
 		wc_maybe_define_constant( 'WOOCOMMERCE_CHECKOUT', true );
 		wc_set_time_limit( 0 );
-
 		do_action( 'woocommerce_before_checkout_process' );
 
 		if ( WC()->cart->is_empty() ) {
