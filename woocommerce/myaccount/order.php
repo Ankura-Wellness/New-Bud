@@ -17,7 +17,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
-}
+};
 // <!-- <img src=" <?php wp_get_attachment_url($args['data']['product']->id,'thumbnail') get_post_permalink($args['data']['product']->id)  '..'" alt="">
 ?>
 
@@ -39,10 +39,10 @@ if ( ! defined( 'ABSPATH' ) ) {
                 ?>
             </h6>
         </div>
-        <div class="card" ng-repeat="">
-            <div class="card-body">
-
-            </div>
-        </div>
+        <ul class="list-group">
+            <?php foreach( $args['data']['order']->get_items() as $items_id => $item )
+                get_template_part( 'woocommerce/myaccount/order_item',null,['class' => 'col-6 col-sm-4 col-md-3','data' => [ 'item' => $item ] ] );
+            ?>
+        </ul>
     </div>
 </div>

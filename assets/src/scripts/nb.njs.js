@@ -5,6 +5,7 @@ import { toastManager } from './njs/libs/toastManager.njs.js';
 
 import { checkout } from './njs/components/checkout.njs.js';
 import { cart } from './njs/components/cart.njs.js';
+import { login } from './njs/components/login.njs.js';
 import { page } from './njs/components/page.njs.js';
 
 export const nb = angular.module('nb', []);
@@ -14,5 +15,6 @@ nb.service('cartManager',cartManager);
 nb.service('toastManager',toastManager);
 
 nb.controller('page', page);
+nb.controller('login', login);
 nb.controller('cart', cart);
 nb.controller('checkout', checkout );

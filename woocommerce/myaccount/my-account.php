@@ -14,7 +14,9 @@ $orders = wc_get_orders([
     'limit'    => 10,         // Retrieve all orders, remove or set a number to limit
     'orderby'  => 'date',
     'order'    => 'desc'
-])
+]);
+
+print_r('<h1>'.is_user_logged_in().'</h1>');
 ?>
 
 <div class="container">

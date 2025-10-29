@@ -19,7 +19,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _njs_libs_toastManager_njs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./njs/libs/toastManager.njs.js */ "./src/scripts/njs/libs/toastManager.njs.js");
 /* harmony import */ var _njs_components_checkout_njs_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./njs/components/checkout.njs.js */ "./src/scripts/njs/components/checkout.njs.js");
 /* harmony import */ var _njs_components_cart_njs_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./njs/components/cart.njs.js */ "./src/scripts/njs/components/cart.njs.js");
-/* harmony import */ var _njs_components_page_njs_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./njs/components/page.njs.js */ "./src/scripts/njs/components/page.njs.js");
+/* harmony import */ var _njs_components_login_njs_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./njs/components/login.njs.js */ "./src/scripts/njs/components/login.njs.js");
+/* harmony import */ var _njs_components_page_njs_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./njs/components/page.njs.js */ "./src/scripts/njs/components/page.njs.js");
+
 
 
 
@@ -32,7 +34,8 @@ nb.service('httpManager', _njs_libs_httpManager_njs_js__WEBPACK_IMPORTED_MODULE_
 nb.service('loadingManager', _njs_libs_loadingManager_njs_js__WEBPACK_IMPORTED_MODULE_2__.loadingManager);
 nb.service('cartManager', _njs_libs_cartManager_njs_js__WEBPACK_IMPORTED_MODULE_0__.cartManager);
 nb.service('toastManager', _njs_libs_toastManager_njs_js__WEBPACK_IMPORTED_MODULE_3__.toastManager);
-nb.controller('page', _njs_components_page_njs_js__WEBPACK_IMPORTED_MODULE_6__.page);
+nb.controller('page', _njs_components_page_njs_js__WEBPACK_IMPORTED_MODULE_7__.page);
+nb.controller('login', _njs_components_login_njs_js__WEBPACK_IMPORTED_MODULE_6__.login);
 nb.controller('cart', _njs_components_cart_njs_js__WEBPACK_IMPORTED_MODULE_5__.cart);
 nb.controller('checkout', _njs_components_checkout_njs_js__WEBPACK_IMPORTED_MODULE_4__.checkout);
 
@@ -268,6 +271,36 @@ const checkout = function ($scope, httpManager, cartManager) {
 
 /***/ }),
 
+/***/ "./src/scripts/njs/components/login.njs.js":
+/*!*************************************************!*\
+  !*** ./src/scripts/njs/components/login.njs.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   login: () => (/* binding */ login)
+/* harmony export */ });
+const login = function ($scope, httpManager, loadingManager) {
+  $scope.email = 'test';
+  $scope.password = 'test';
+  $scope.nonce = '';
+  function signInCallback(response) {
+    loadingManager.hide();
+  }
+  $scope.login = () => {
+    loadingManager.show();
+    httpManager.postRequester('wp-admin/admin-ajax.php', {
+      action: 'auth',
+      email: $scope.email,
+      password: $scope.password,
+      nonce: jQuery('#nonce').val()
+    }, true, signInCallback, signInCallback);
+  };
+};
+
+/***/ }),
+
 /***/ "./src/scripts/njs/components/page.njs.js":
 /*!************************************************!*\
   !*** ./src/scripts/njs/components/page.njs.js ***!
@@ -426,8 +459,8 @@ const httpManager = function ($http, loadingManager, toastManager) {
   return {
     postRequester: function (requestMethod, parameters, secure, successCallback, errorCallback) {
       // var webUrl = process.env.NODE_ENV == 'production' ? 'https://ankurah.com/' : 'https://localhost/ankurah/';
-      var webUrl = 'https://ankurah.com/';
-      // var webUrl = 'http://localhost/ankurah/';
+      // var webUrl = 'https://ankurah.com/';
+      var webUrl = 'http://localhost/ankurah/';
       let params_string = '';
       for (const parameter in parameters) {
         params_string = params_string.length == 0 ? '' : params_string + '&';
