@@ -281,12 +281,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   login: () => (/* binding */ login)
 /* harmony export */ });
-const login = function ($scope, httpManager, loadingManager) {
+const login = function ($scope, $sce, httpManager, loadingManager) {
   $scope.email = 'test';
   $scope.password = 'test';
   $scope.nonce = '';
+  $scope.message = '';
   function signInCallback(response) {
     loadingManager.hide();
+    var body = response.data.response;
+    if (body.errors != null) {
+      for (const [key, value] of Object.entries(body.errors)) {
+        $scope.message = $sce.trustAsHtml(value[0]);
+      }
+      console.log('Value', $scope.message);
+    } else if (body.ID != null) location.reload();
   }
   $scope.login = () => {
     loadingManager.show();
@@ -295,6 +303,13 @@ const login = function ($scope, httpManager, loadingManager) {
       email: $scope.email,
       password: $scope.password,
       nonce: jQuery('#nonce').val()
+    }, true, signInCallback, signInCallback);
+  };
+  $scope.resetPassword = () => {
+    loadingManager.show();
+    httpManager.postRequester('wp-admin/admin-ajax.php', {
+      action: 'auth_reset_password',
+      email: $scope.email
     }, true, signInCallback, signInCallback);
   };
 };
@@ -460,7 +475,7 @@ const httpManager = function ($http, loadingManager, toastManager) {
     postRequester: function (requestMethod, parameters, secure, successCallback, errorCallback) {
       // var webUrl = process.env.NODE_ENV == 'production' ? 'https://ankurah.com/' : 'https://localhost/ankurah/';
       var webUrl = 'https://ankurah.com/';
-      // var webUrl = 'http://localhost/ankurah/';
+      // var webUrl = 'https://localhost/ankurah/';
       let params_string = '';
       for (const parameter in parameters) {
         params_string = params_string.length == 0 ? '' : params_string + '&';

@@ -25,6 +25,8 @@ print_r('<h1>'.is_user_logged_in().'</h1>');
                 <div class="card-body container-fluid">
                     <div class="row justify-content-center">
                         <div class="col-8">
+                            <div class="alert alert-danger" role="alert" ng-if="!!message" ng-bind-html="message">
+                            </div>
                             <div class="mb-3">
                                 <label class="form-label primaryFont">
                                     Email <?php print_r('<h1>'.is_user_logged_in().'</h1>'); ?>
@@ -38,9 +40,14 @@ print_r('<h1>'.is_user_logged_in().'</h1>');
                                 <input type="password" class="form-control primaryFont" placeholder="name@example.com" ng-model="password">
                             </div>
                             <input type="hidden" value="<?php echo wp_create_nonce( -1 ) ?>" ng-model="nonce" id="nonce3">
-                            <button class="btn btn-custom" ng-click="login()">
-                                Login
-                            </button>
+                            <div class="d-flex justify-content-between">
+                                <button class="btn btn-custom" ng-click="login()">
+                                    Login
+                                </button>
+                                <button class="btn btn-clear primaryFont" ng-click="resetPassword()">
+                                    Forgot Password
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
