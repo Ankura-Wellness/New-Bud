@@ -418,8 +418,7 @@ const cartManager = function (httpManager, loadingManager) {
         id: id
       }, true, getCartItemsCallback);
     },
-    removeFromCart: function (id, quantity, $event) {
-      $event.stopPropagation();
+    removeFromCart: function (id, quantity) {
       loadingManager.show();
       httpManager.postRequester('wp-admin/admin-ajax.php', {
         action: 'remove_cart_items',

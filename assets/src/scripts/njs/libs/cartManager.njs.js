@@ -54,8 +54,7 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 			loadingManager.show();
 			shouldShowCart = openCart;
 			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'add_cart_items' , id : id },true,getCartItemsCallback);
-		},removeFromCart: function (id,quantity,$event) {
-			$event.stopPropagation();
+		},removeFromCart: function (id,quantity) {
     		loadingManager.show();
 			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'remove_cart_items' , id : id , quantity : quantity },true,getCartItemsCallback);
 		},toggleCart: function () {
