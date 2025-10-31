@@ -2,8 +2,8 @@ export const httpManager = function ($http,loadingManager,toastManager) {
    return { 
    		postRequester: function (requestMethod,parameters,secure,successCallback,errorCallback) {
             // var webUrl = process.env.NODE_ENV == 'production' ? 'https://ankurah.com/' : 'https://localhost/ankurah/';
-			var webUrl = 'https://ankurah.com/';
-			// var webUrl = 'https://localhost/ankurah/';
+			// var webUrl = 'https://ankurah.com/';
+			var webUrl = 'https://localhost/ankurah/';
             let params_string = ''
             for(const parameter in parameters ){
                 params_string = params_string.length == 0 ? '' :  params_string + '&';

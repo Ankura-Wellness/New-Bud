@@ -24,7 +24,7 @@ function nbAuth() {
 
 function nbAuthResetPassword() {
 	if ( ! email_exists( $_POST['email'] ) ) {
-        wp_send_json($response = [ 'status' => 'success' , 'Message' => 'Email ID Doesnt exist' ]);
+        wp_send_json($response = [ 'status' => 'failure' , 'message' => 'Email ID Doesn\'t exist' ]);
     }
 
     // Trigger WordPress password reset email
@@ -32,7 +32,7 @@ function nbAuthResetPassword() {
     if( $user ) {
         $reset = retrieve_password( $user->user_login );
         if ( is_wp_error( $reset ) )
-			wp_send_json($response = [ 'status' => 'success' , 'message' => $reset->get_error_message() ]);
+			wp_send_json($response = [ 'status' => 'failure' , 'message' => $reset->get_error_message() ]);
         else
 			wp_send_json($response = [ 'status' => 'success' , 'message' => 'Password reset email sent successfully to '.$_POST['email'].'.' ]);
     }

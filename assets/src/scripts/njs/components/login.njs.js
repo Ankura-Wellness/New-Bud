@@ -1,8 +1,9 @@
 export const login = function( $scope,$sce,httpManager,loadingManager ) {
-    $scope.email = 'test';
-    $scope.password = 'test';
+    $scope.email = '';
+    $scope.password = '';
     $scope.nonce = '';
     $scope.message = '';
+    $scope.resetPasswordMessage = '';
 
     function signInCallback(response) {
         loadingManager.hide();
@@ -17,6 +18,15 @@ export const login = function( $scope,$sce,httpManager,loadingManager ) {
             location.reload();
 	}
 
+    function resetPasswordCallback(response) {
+        loadingManager.hide();
+        // var body = response.data.response;
+        console.log(response.data.status);
+        
+        if(response.data.status == 'failure')
+            $scope.resetPasswordMessage = response.data.message;
+	}
+
     $scope.login = () => {
         loadingManager.show();
         httpManager.postRequester('wp-admin/admin-ajax.php',{ action:'auth' , email : $scope.email , password : $scope.password , nonce : jQuery('#nonce').val() },true,signInCallback,signInCallback);
@@ -24,6 +34,6 @@ export const login = function( $scope,$sce,httpManager,loadingManager ) {
 
     $scope.resetPassword = () => {
         loadingManager.show();
-        httpManager.postRequester('wp-admin/admin-ajax.php',{ action:'auth_reset_password' , email : $scope.email },true,signInCallback,signInCallback);
+        httpManager.postRequester('wp-admin/admin-ajax.php',{ action:'auth_reset_password' , email : $scope.email },true,resetPasswordCallback,resetPasswordCallback);
     };
 };
