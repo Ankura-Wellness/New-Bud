@@ -31,7 +31,7 @@ $orders = wc_get_orders([
                 </div>
             </div>
         </div>
-        <div class="col-9 d-flex">
+        <div class="col-9 d-flex flex-column">
             <?php foreach($orders as $order)
                 get_template_part( 'woocommerce/myaccount/order',null,['class' => 'col-6 col-sm-4 col-md-3','data' => [ 'order' => $order ] ] );
             ?>
