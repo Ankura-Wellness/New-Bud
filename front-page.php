@@ -100,9 +100,9 @@ get_header(null,['title'=>'']);
                             </li>
                         </ul>
                     </div>
-                    <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Dried%20Banana%20Munchies">
+                    <!-- <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi%2C%20I%20would%20like%20to%20place%20an%20order%20for%20Dried%20Banana%20Munchies">
                         Enquire Now
-                    </a>
+                    </a> -->
                     <a class="btn btn-custom dark" href="/product/dried-banana-munchies/">
                         Buy Now
                     </a>
@@ -138,9 +138,12 @@ get_header(null,['title'=>'']);
                             </li>
                         </ul>
                     </div>
-                    <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi">
-                        Enquire Now
+                    <a class="btn btn-custom dark" href="/product/goan-dried-coconut/">
+                        Buy Now
                     </a>
+                    <!-- <a class="btn btn-custom dark" href="https://wa.me/917620805302?text=Hi">
+                        Enquire Now
+                    </a> -->
                 </div>
                 <div class="col-12  col-sm-6 col-md-5 mb-4 d-none d-md-block">
                     <img src="https://ankurah.com/wp-content/uploads/2025/04/a3e42672-6457-4ffb-9b15-fe2ba2b8c524-e1744962262489.jpeg" style="width: 100%" alt="">
