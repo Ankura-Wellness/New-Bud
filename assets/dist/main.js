@@ -312,6 +312,12 @@ const login = function ($scope, $sce, httpManager, loadingManager) {
       nonce: jQuery('#nonce').val()
     }, true, signInCallback, signInCallback);
   };
+  $scope.signout = () => {
+    loadingManager.show();
+    httpManager.postRequester('wp-admin/admin-ajax.php', {
+      action: 'signout'
+    }, true, signInCallback, signInCallback);
+  };
   $scope.resetPassword = () => {
     loadingManager.show();
     httpManager.postRequester('wp-admin/admin-ajax.php', {
@@ -481,7 +487,7 @@ const httpManager = function ($http, loadingManager, toastManager) {
     postRequester: function (requestMethod, parameters, secure, successCallback, errorCallback) {
       // var webUrl = process.env.NODE_ENV == 'production' ? 'https://ankurah.com/' : 'https://localhost/ankurah/';
       var webUrl = 'https://ankurah.com/';
-      var webUrl = 'https://localhost/ankurah/';
+      // var webUrl = 'https://localhost/ankurah/';
       let params_string = '';
       for (const parameter in parameters) {
         params_string = params_string.length == 0 ? '' : params_string + '&';

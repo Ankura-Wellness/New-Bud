@@ -17,7 +17,7 @@ $orders = wc_get_orders([
 ]);
 ?>
 
-<div class="container">
+<div class="container" ng-controller="login">
     <div class="row my-3">
         <div class="col-3">
             <div class="card">
@@ -25,9 +25,9 @@ $orders = wc_get_orders([
                     <h2 class="heroFont">
                         Hi, <?php echo $user_info->display_name ?>
                     </h2>
-                    <!-- <button class="btn btn-custom">
+                    <button class="btn btn-custom" ng-click="signout()">
                         Logout
-                    </button> -->
+                    </button>
                 </div>
             </div>
         </div>

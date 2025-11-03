@@ -3,6 +3,9 @@
 add_action('wp_ajax_auth', 'nbAuth');
 add_action('wp_ajax_nopriv_auth', 'nbAuth');
 
+add_action('wp_ajax_signout', 'nbSignout');
+add_action('wp_ajax_nopriv_signout', 'nbSignout');
+
 add_action('wp_ajax_auth_reset_password', 'nbAuthResetPassword');
 add_action('wp_ajax_nopriv_auth_reset_password', 'nbAuthResetPassword');
 
@@ -16,10 +19,15 @@ function nbAuth() {
 
 	wp_set_auth_cookie($user_signon->ID, true);
 	wp_set_current_user($user_signon->ID);
-	// wp_redirect(home_url());
 	do_action('wp_login', 'test1', $user->data);
 	
 	wp_send_json([ 'status' => 'success' , 'response' => $user_signon ]);
+}
+
+function nbSignout() {
+	// check_ajax_referer('ajax-logout-nonce', 'security');
+    wp_logout();
+	wp_send_json([ 'status' => 'success' , 'response' => wp_get_current_user() ]);
 }
 
 function nbAuthResetPassword() {
