@@ -8,8 +8,8 @@ $base_url = home_url();
 get_header(null,['title'=>'']);
 ?>
 <div id="nbFrontPage">
-    <img class="w-100 d-none d-md-block" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/6ece9d0a-ce30-4512-878f-fe0de0967b73.jpg' ); ?>" alt="">
-    <img class="w-100 d-block d-md-none" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_2_m.png' ); ?>" alt="">
+    <img class="w-100 d-none d-md-block" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_5.jpg' ); ?>" alt="">
+    <img class="w-100 d-block d-md-none" src="<?php echo esc_url( get_template_directory_uri() . '/assets/src/img/front-page/banner_5_m.jpg' ); ?>" alt="">
     <div id="container">
     <div id="box">
         <div>
