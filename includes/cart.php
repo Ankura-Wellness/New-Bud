@@ -26,21 +26,32 @@ function zsiRemoveCoupon() {
 }
 
 function zsiAddCartItems() {
-	if(isset($_POST['id']))
+	$response = [ 'status' => 'success' , 'cart' => [] , 'discount' => [] , 'result' => 0 ];
+	if(isset($_POST['id']) && isset($_POST['variation_id']))
+		$response['result'] = WC()->cart->add_to_cart($_POST['id'],1,$_POST['variation_id'],['weight']);
+	else if(isset($_POST['id']))
 		WC()->cart->add_to_cart($_POST['id']);
-	wp_send_json(zsiFetchCart());	
+	
+	wp_send_json(zsiFetchCart());
 }
 
 function zsiRemoveCartItems() {
 	$cart = WC()->instance()->cart;
 	if(isset($_POST['id'])){
-    	$id = $_POST['id'];
-    	$cart_id = $cart->generate_cart_id($id);
-    	$cart_item_id = $cart->find_product_in_cart($cart_id);
+    	$cart_item_id = find_product_in_cart_by_variation_id($_POST['variation_id']);
     	if($cart_item_id)
        		$cart->set_quantity($cart_item_id, $_POST['quantity']);
 	}
 	wp_send_json(zsiFetchCart());
+}
+
+function find_product_in_cart_by_variation_id( $variation_id ) {
+    foreach( WC()->cart->get_cart() as $cart_item_key => $cart_item ){
+        if( isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] == $variation_id )
+            return $cart_item_key;
+    }
+
+    return false;
 }
 
 function zsiGetCartItems() {
@@ -52,7 +63,7 @@ function zsiFetchCart(){
 	foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
 		$product = $cart_item['data'];
 		$productDetails = new WC_Product( $cart_item['product_id'] );
-		array_push($response['cart'], [ 'id' => $product->id , 'product_name' => $product->get_name(),'quantity' => $cart_item['quantity'],'price' => $product->get_price(),'thumbnail' => wp_get_attachment_url($product->get_image_id(),'thumbnail'), 'url' => get_post($product->id)->post_name ]);
+		array_push($response['cart'], [ 'id' => $product->id , 'product_name' => $product->get_name(),'quantity' => $cart_item['quantity'],'price' => $product->get_price(),'thumbnail' => wp_get_attachment_url($product->get_image_id(),'thumbnail'), 'url' => get_post($product->id)->post_name , 'variation_id' => $cart_item['variation_id'] ]);
 	}
 	$coupons = WC()->cart->get_coupons();
 	$discounts = [];
@@ -83,7 +94,7 @@ function zsiFetchCart(){
 			'description' => $description,
 			'type'        => $discount_type,
 			'amount_raw'  => floatval( $amount_raw ),
-			'amount'      => wc_price( $amount_raw ),
+			'amount'      => wc_price( $amount_raw )
 		];
 	}
 

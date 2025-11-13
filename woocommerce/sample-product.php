@@ -28,9 +28,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="w-100 ratio ratio-1x1 overflow-hidden">
 			<img src="<?php echo wp_get_attachment_url($args['data']['product']->get_image_id(),'thumbnail') ?>" alt="" onload="">
 		</div>
-		<div>
-		
-		</div>
 		<h4 class="mt-3 text-dark">
 			<?php echo esc_html( preg_replace('/[0-9]{0,4}\s?gms?/','',$args['data']['product']->name) ); ?>
 		</h4>
@@ -59,15 +56,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 				'. $product->total_sales .' -->
 		</div>
 	</a>
-	<button class="btn btn-custom w-100 addToCart text-nowrap" data-itemname="<?php echo esc_html( $args['data']['product']->name ); ?>" data-itemid="<?php echo esc_html( $args['data']['product']->id ); ?> " data-itemprice="<?php echo esc_html( $args['data']['product']->price ); ?>" data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0]));?>" data-itemquantity="1" ng-click="cartManagerCtrl.addToCart(<?php echo esc_html( $args['data']['product']->id); ?>,true)" <?php echo $args['data']['product']->stock_status == 'outofstock' ? 'disabled' : '' ?>>
-		<span class="d-block d-sm-none">
-			<i class="fa-solid fa-cart-plus">
-			</i>
-			Add
-		</span> 
-		<span class="d-none d-sm-block">
-			Add to Cart
-		</span>
-	</button>
+	<?php
+	if($args['data']['product']->is_type( 'simple' )){
+		// data-itemname="'.esc_html( $args['data']['product']->name ); .'" data-itemid="'.  esc_html( $args['data']['product']->id ); .'" data-itemprice="'. esc_html( $args['data']['product']->price ); .'" data-itemcategory1="'. esc_html( get_the_category_by_ID(  $args['data']['product']->category_ids[0])); .'"
+		echo '<button class="btn btn-custom w-100 addToCart text-nowrap"  data-itemquantity="1" ng-click="cartManagerCtrl.addToCart('. esc_html( $args['data']['product']->id ) .',NULL,true)">
+			<span class="d-block d-sm-none">
+				<i class="fa-solid fa-cart-plus">
+				</i>
+				Add
+			</span>
+			<span class="d-none d-sm-block">
+				Add to Cart
+			</span>
+		</button>';
+	} else
+		echo '<a href="'. get_post_permalink($args['data']['product']->id) .'" class="btn btn-custom w-100 addToCart text-nowrap">
+			<span >
+				Select Option
+			</span>
+		</a>';
+	?>
 	<p>
 </div>

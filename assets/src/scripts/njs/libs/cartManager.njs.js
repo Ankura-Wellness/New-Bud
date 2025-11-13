@@ -50,13 +50,13 @@ export const cartManager =  function ( httpManager,loadingManager ) {
 		},removeCoupon: function (couponCode) {	
 			loadingManager.show();
 			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'remove_coupon' , coupon_code : couponCode },true,getCartItemsCallback);
-		},addToCart: function (id,openCart) {	
+		},addToCart: function (id,variation_id,openCart) {	
 			loadingManager.show();
 			shouldShowCart = openCart;
-			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'add_cart_items' , id : id },true,getCartItemsCallback);
-		},removeFromCart: function (id,quantity) {
+			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'add_cart_items' , id : id , variation_id : variation_id },true,getCartItemsCallback);
+		},removeFromCart: function (id,variation_id,quantity) {
     		loadingManager.show();
-			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'remove_cart_items' , id : id , quantity : quantity },true,getCartItemsCallback);
+			httpManager.postRequester('wp-admin/admin-ajax.php',{ action: 'remove_cart_items' , id : id , variation_id : variation_id , quantity : quantity },true,getCartItemsCallback);
 		},toggleCart: function () {
 			showCart = !showCart;
 		},cartState: function () {

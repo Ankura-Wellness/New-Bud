@@ -67,7 +67,18 @@ get_header( null , [ 'title' => '' ] ); ?>
 				<?php print_r($product->name) ?>
 			</h1>
 			<h6>
-				<?php echo esc_html( (float)$product->weight*1000 ); ?>gms
+				<?php if ( $product->is_type( 'variable' ) ) {
+						$variation_ids = $product->get_children();
+						echo '<p>Select '. explode('_',array_values(array_keys($product->get_variation_attributes()))[0])[1] .' : </p>';
+						// echo '<div class="d-none">{{ currentVariationId = '.wc_get_product( $variation_ids[0] )->variation_id .'  }}</div>';
+						foreach ( $variation_ids as $variation_id ){
+							$variation = wc_get_product( $variation_id );
+							// print_r($variation);
+							echo '<button class="btn mb-2 me-2 " ng-class=" \''.esc_html($variation->variation_id).'\' == currentVariationId ? \'btn-secondary\' : \'btn-outline-secondary\'" ng-click="selectVariation('.esc_html($variation->variation_id).','.esc_html($variation->get_price()).','.esc_html($variation->get_regular_price()).')">'.esc_html( $variation->get_attribute( 'weight' ) ).'</button>';
+						}
+					} else
+						echo esc_html( (float)$product->weight*1000 ).'gms';
+				?>
 				<span class="text-secondary">
 					<?php
 					if($product->stock_status == 'outofstock')
@@ -76,21 +87,22 @@ get_header( null , [ 'title' => '' ] ); ?>
 				</span>
 			</h6>
 			
-			<h4 class="nbPrice mb-3">
+			<h4 class="mb-3" ng-class="currentPrice > 0 ? 'nbPrice' : ''">
 				<span>
-					<?php  print_r($product->price) ?>
+					{{ currentPrice > 0 ? currentPrice : 'Select option to get price' }}
+					
 				</span>
-				<!-- <span class="badge bg-warning">
-					Sale
-				</span> -->
+				<small class="text-decoration-line-through" ng-class="regularPrice > currentPrice ? '' : 'd-none'">
+					{{ regularPrice }}
+				</small>
 			</h4>
 			<div class="preUpdate" ng-class="cartManagerCtrl.updated() && !(cartManagerCtrl.getCartItemsTotal() > 9) ? 'ready' : ''">
-				<button class="btn btn-custom w-100 addToCart" data-itemname="<?php echo esc_html( $product->name ); ?>" data-itemid="<?php echo esc_html( $product->id ); ?> " data-itemprice="<?php echo esc_html( $product->price ); ?>"  data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $product->category_ids[0] ) ); ?>" data-itemquantity="1"  ng-click="cartManagerCtrl.addToCart(<?php  print_r($product->id) ?>,true)" <?php echo $product->stock_status == 'outofstock' ? 'disabled' : '' ?>>
+				<button class="btn btn-custom w-100 addToCart" ng-class="currentPrice > 0 ? '' : 'disabled'" data-itemname="<?php echo esc_html( $product->name ); ?>" data-itemid="<?php echo esc_html( $product->id ); ?> " data-itemprice="<?php echo esc_html( $product->price ); ?>"  data-itemcategory1="<?php echo esc_html( get_the_category_by_ID(  $product->category_ids[0] ) ); ?>" data-itemquantity="1"  ng-click="addToCart(<?php  print_r($product->id) ?>,true)" <?php echo $product->stock_status == 'outofstock' ? 'disabled' : '' ?>>
 					Add to Cart
 				</button>
-				<a class="btn btn-custom dark mt-3 w-100 checkout" data-data-itemprice="<?php  print_r($product->price) ?>" href="<?php print_r($woocommerce->cart->get_checkout_url().'?add-to-cart='.$product->id.'&quantity=1') ?>" <?php echo $product->stock_status == 'outofstock' ? 'style="pointer-events:none;opacity: 0.8;"' : '' ?>>
+				<!-- <a class="btn btn-custom dark mt-3 w-100 checkout" data-data-itemprice="<?php  print_r($product->price) ?>" href="<?php print_r($woocommerce->cart->get_checkout_url().'?add-to-cart='.$product->id.'&quantity=1') ?>" <?php echo $product->stock_status == 'outofstock' ? 'style="pointer-events:none;opacity: 0.8;"' : '' ?>>
 					Buy Now
-				</a>
+				</a> -->
 			</div>
 			<!-- <div class="preHidden" ng-class="(cartManagerCtrl.updated() && cartManagerCtrl.getCartItemsTotal() > 9) ? 'ready' : ''">
 				<p class="text-danger secondaryFont text-center align-middle" style="font-size: 14px;font-weight: 700;margin:10px 15px 0 0;">

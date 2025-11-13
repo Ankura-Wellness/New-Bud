@@ -56,6 +56,18 @@ const cart = function ($scope, cartManager, loadingManager) {
   $scope.loadingManagerCtrl = loadingManager;
   $scope.cartManagerCtrl.getCart();
   $scope.couponCode = '';
+  $scope.currentPrice = 0;
+  $scope.regularPrice = 0;
+  $scope.currentVariationId = 0;
+  $scope.selectVariation = function (id, price, regularPrice) {
+    $scope.currentPrice = price;
+    $scope.regularPrice = regularPrice;
+    $scope.currentVariationId = id;
+  };
+  $scope.addToCart = function (productId) {
+    $scope.loadingManagerCtrl.show();
+    $scope.cartManagerCtrl.addToCart(productId, $scope.currentVariationId, true);
+  };
 };
 
 /***/ }),
@@ -416,19 +428,21 @@ const cartManager = function (httpManager, loadingManager) {
         coupon_code: couponCode
       }, true, getCartItemsCallback);
     },
-    addToCart: function (id, openCart) {
+    addToCart: function (id, variation_id, openCart) {
       loadingManager.show();
       shouldShowCart = openCart;
       httpManager.postRequester('wp-admin/admin-ajax.php', {
         action: 'add_cart_items',
-        id: id
+        id: id,
+        variation_id: variation_id
       }, true, getCartItemsCallback);
     },
-    removeFromCart: function (id, quantity) {
+    removeFromCart: function (id, variation_id, quantity) {
       loadingManager.show();
       httpManager.postRequester('wp-admin/admin-ajax.php', {
         action: 'remove_cart_items',
         id: id,
+        variation_id: variation_id,
         quantity: quantity
       }, true, getCartItemsCallback);
     },
