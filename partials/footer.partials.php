@@ -189,12 +189,12 @@
 				<h6 class="secondaryFont text-center text-black-50 fw-light">
 					SHIPPING CHARGES CALCULATED <br> AT CHECKOUT
 				</h6>
-				<button class="btn btn-custom mt-3" ng-click="cartManagerCtrl.toggleCart()">
-					Continue Shopping
-				</button>
-				<a href="/checkout" class="btn btn-custom dark mt-3 mb-5 mb-sm-5 mb-xl-3 checkout">
+				<a href="/checkout" class="btn btn-custom dark mt-3 checkout">
 					Checkout
 				</a>
+				<button id="continueShopping" class="btn btn-custom mt-3 mb-5 mb-sm-5 mb-xl-3" ng-click="cartManagerCtrl.toggleCart()">
+					Continue Shopping
+				</button>
 			</div>
 		</div>
 		<div id="emptyCart" class="flex-column justify-content-center align-items-center h-100 p-3" ng-if="cartManagerCtrl.updated()">
